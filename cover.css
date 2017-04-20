@@ -2,6 +2,14 @@
  * Globals
  */
 
+.title {
+    font-weight: bold;
+}
+
+.venue {
+    font-weight: bold;
+}
+ 
 /* Links */
 a,
 a:focus,
