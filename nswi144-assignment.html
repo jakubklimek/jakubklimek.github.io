@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.1//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-2.dtd">
+<html xml:lang="en" lang="en"
+      xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:foaf="http://xmlns.com/foaf/0.1/"
+      xmlns:contact="http://www.w3.org/2000/10/swap/pim/contact#"
+      xmlns:dc="http://purl.org/dc/terms/"
+      xmlns:org="http://www.w3.org/ns/org#"
+      xmlns:v="http://rdf.data-vocabulary.org/#"
+      xmlns:swrc="http://swrc.ontoware.org/ontology#"
+      xmlns:owl="http://www.w3.org/2002/07/owl#"
+      prefix="foaf: http://xmlns.com/foaf/0.1/
+              contact: http://www.w3.org/2000/10/swap/pim/contact#
+              dc: http://purl.org/dc/terms/
+              v: http://rdf.data-vocabulary.org/#
+              swrc: http://swrc.ontoware.org/ontology#
+              owl: http://www.w3.org/2002/07/owl#
+              org: http://www.w3.org/ns/org#"
+      version="XHTML+RDFa 1.1"
+      about="" typeof="foaf:Document">
+ <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="cover.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#333">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#333">
+  <meta http-equiv="Content-language" content="en" />
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta name="author" content="Jakub Klímek" />
+  <meta name="summary" content="NSWI144 course information" />
+  <meta name="Description" content="Information for students of the NSWI144 course on data integration and quality" />
+  <meta name="Keywords" content="linked data, integration, quality, nswi144" />
+  <title>NSWI144 - Data Integration and Quality</title>
+  <base href="https://jakub.klímek.com/"/>
+ </head>
+ <body class="container text-left">
+  <div class="main">
+    <h1>NSWI144 - Data Integration and Quality - Semestral assignment specification</h1>
+    <h2>Briefly</h2>
+    <ol>
+       <li>Identify source data</li>
+       <li>Download/Extract/Scrape</li>
+       <li>Triplify (convert to RDF according to LD principles - *****)</li>
+       <li>Identify vocabularies to be reused, use them, maybe create your own</li>
+       <li>Link (internally, externally)</li>
+       <li>Store</li>
+       <li>Query & Use – in a demo application</li>
+    </ol>
+    <h2>In detail</h2>
+      <h3>Part 1 - identificaton and analysis of data sources</h3>
+      <h4>What</h4>
+      <ol>
+         <li>At least 3 data sources regarding a related topic - they have to be linkable and sufficiently different</li>
+         <li>e.g. 3 tables from 1 database = 1 data source</li>
+         <li>e.g. 3 sheets in 1 excel file = 1 data source</li>
+         <li>3 HTML pages from one website = 1 data source</li>
+         <li>1 HTML page, 1 CSV file and 1 XML file, from different websites = 3 data sources</li>
+         <li>They should not be triplified (transformed to RDF) yet</li>
+         <li>UML-style class diagram with an overview of entities and their properties, in which datasets they are located, and how they can be linked</li>
+         <li>You can search the <a href="https://data.gov.cz" target="_blank">National Open Data Catalog</a>, in <a href="https://data.gov.uk" target="_blank">British open data</a> or simply on Google.</li>
+      </ol>
+      <h4>How</h4>
+      <ol>
+         <li>Folder <code>source</code> containing:</li>
+         <ol>
+            <li>TXT file <code>description.txt</code> (UTF-8 encoded) with description of the selected data - for each data source: Format (XML/HTML/CSV/...), tools used for triplification, link to the datasource</li>
+            <li>PNG file <code>diagram.png</code> (UML class diagrams style)</li>
+         </ol>
+      </ol>
+      <h3>Part 2 - transformation of source data into RDF</h3>
+      <h4>What</h4>
+      <ol>
+         <li>Triplification script (TARQL, XSLT, ...) which can be run on the downloaded data - 1 for each data source</li>
+         <li>Resulting RDF data has correct format</li>
+         <ol>
+            <li>it represents the source data</li>
+            <li>it uses correctly defined IRI patterns</li>
+            <li>it uses correct data types and language tags</li>
+            <li>entities from source data are correctly separated and interlinked</li>
+            <li>adheres to the "Link not Label" pattern</li>
+         </ol>
+         <li>Transformation script uses a language appropriate for the source data: XSLT (XML), XQuery (XML), R2RML (RDB), Tarql (CSV, Excel), Java+Jsoup (HTML)</li>
+         <li>Feedback from the first phase incorporated</li>
+         <li>In the first phase, correct vocabularies do not have to be used.</li>
+         <li>In the final phase, appropriate vocabularies have to be used (SKOS for codelists, RDF Data Cube for statistical data, etc.)</li>
+         <li>The resulting datasets and linksets are properly described with metadata according to the <a href="https://joinup.ec.europa.eu/asset/dcat_application_profile/asset_release/dcat-ap-v11">DCAT-AP v1.1</a> standard, using required and recommended properties and codelists.</li>
+      </ol>
+      <h4>How</h4>
+      <ol>
+         <li>Folder <code>download</code> containing:</li>
+         <ol>
+            <li>Subfolder <code>triplifier</code> containing the triplification scripts</li>
+            <li>Subfolder <code>output</code> containing the resulting RDF data (TIP: File extensions: Turtle: <code>.ttl</code>, N-Triples: <code>.nt</code>, RDF/XML: <code>.rdf</code>)</li>
+            <li>Subfolder <code>catalog</code> containing a catalog according to DCAT-AP v1.1 in Turtle syntax</li>
+         </ol>
+      </ol>
+      <h3>Part 3 - Link Discovery (Silk)</h3>
+      <h4>What</h4>
+      <ol>
+         <li>Use Silk to discover links among your datasets</li>
+         <li>Use Silk to discover links between your datasets and foreign datasets already published on the Web. You can find those for instance in the <a href="https://lod-cloud.net/" target="_blank">LOD cloud</a>, in <a href="https://old.datahub.io/" target="_blank">old DataHubu</a>, in <a href="https://linked.opendata.cz/" target="_blank">linked.opendata.cz</a>, in <a href="https://wiki.dbpedia.org/" target="_blank">DBpedia</a>, in the <a href="https://data.gov.cz" target="_blank">National Open Data Catalog</a>, on the <a href="https://publications.europa.eu/en/web/eu-vocabularies/about" target="_blank">EU Vocabularies</a> web, etc.</li>
+         <li>The resulting links will be split into linksets, properly described by VoID metadata</li>
+      </ol>
+      <h4>How</h4>
+      <ol>
+         <li>Folder <code>linking</code> containing:</li>
+         <ol>
+            <li>Subfolder <code>internal</code> containing:</li>
+            <ol>
+               <li>Subfolder for each linking task between your datasets, named after the linked datasets, and in it:</li>
+               <ol>
+                  <li>SILK-LSL script or export of the linking task from Silk Workbench</li>
+                  <li>The resulting linkset in N-Triples</li>
+                  <li>The VoID metadata file</li>
+               </ol>
+            </ol>
+            <li>Subfolder <code>external</code> containing:</li>
+            <ol>
+               <li>Subfolder for each linking task between your dataset and a foreign dataset, named after the linked datasets, and in it:</li>
+               <ol>
+                  <li>SILK-LSL script or export of the linking task from Silk Workbench</li>
+                  <li>The resulting linkset in N-Triples</li>
+                  <li>The VoID metadata file</li>
+               </ol>
+            </ol>
+         </ol>
+      </ol>
+      <h3>Part 4 - SPARQL querying</h3>
+      <h4>What</h4>
+      <ol>
+         <li>Load your datasets, linksets and metadata into a triplestore of your choice</li>
+         <li>Create non-trivial SPARQL queries demonstrating the added value of triplification and linking of your datasets</li>
+         <li>The queries should contain at least 2x <a href="https://www.w3.org/TR/sparql11-query/#select">SELECT</a>, 2x <a href="https://www.w3.org/TR/sparql11-query/#construct">CONSTRUCT</a>, 1x <a href="https://www.w3.org/TR/sparql11-query/#ask">ASK</a> and 1x <a href="https://www.w3.org/TR/sparql11-query/#describe">DESCRIBE</a>.</li>
+         <li>The queries should contain (together, not each separately) the following constructs: <a href="https://www.w3.org/TR/sparql11-query/#scopeFilters">FILTER</a>, <a href="https://www.w3.org/TR/sparql11-query/#optionals">OPTIONAL</a>, <a href="https://www.w3.org/TR/sparql11-query/#inline-data">VALUES</a>, <a href="https://www.w3.org/TR/sparql11-query/#bind">BIND</a>, <a href="https://www.w3.org/TR/sparql11-query/#func-if">IF</a>.</li>
+      </ol>
+      <h4>How</h4>
+      <ol>
+         <li>Subfolder <code>queries</code> containing individual SPARQL queries, as <code>*.sparql</code>, UTF-8 encoded text files</li>
+      </ol>
+      <h3>Part 5 - simple web application working with an RDF library and creating semantic annotations</h3>
+      <h4>What</h4>
+      <ol>
+         <li>Create a simple web application in Java, meaningfully using existing libraries for working with RDF (Apache Jena or Eclipse RDF4J)</li>
+         <li>The application should issue at least 3 non-trivial SPARQL queries (queries from Part 4 are recommended). At least one of the queries needs to be a SPARQL CONSTRUCT, and the resulting page must not be a simple triple list.</li>
+         <li>The web application does not need to use CSS, but it has to consist of a few interlinked web pages - typically, it is a list of entities and a page showing a detail of an entity and some statistics</li>
+         <li>TIP: A solution wich only sends an HTTP request in a correct format like this: <code>https://linked.opendata.cz/sparql/?default-graph-uri=&amp;query=select+*+where+%7B%3Fs+%3Fp+%3Fo%7D+LIMIT+100&amp;format=text%2Fhtml</code> and prints the result is insufficient. A reasonale usage of the RDF data model implemented by the libraries has to be shown.</li>
+         <li>Use RDFa, Microformats or Microdata to semantically represent the shown data in HTML</li>
+      </ol>
+      <h4>How</h4>
+      <ol>
+         <li>Folder <code>app</code> containing the source code of the project and the compiled WAR file</li>
+      </ol>
+      <h3>Part 6 - presentation</h3>
+      <h4>What</h4>
+      <ol>
+         <li>Prepare a presentation of your semestral project</li>
+         <li>It should be 3 minutes long</li>
+         <li>Show the data sources used, which tools were used for triplification and wich new queries you are now able to answer thanks to the interlinking of the chosen datasets.</li>
+         <li>Show screenshots of your application</li>
+      </ol>
+      <h4>How</h4>
+      <ol>
+         <li>Folder <code>presentation</code> containing a simple, HTML page with the description, which will be used for the presentation</li>
+      </ol>    
+  </div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
