@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.1//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-2.dtd">
+<html xml:lang="cs" lang="cs"
+      xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:foaf="http://xmlns.com/foaf/0.1/"
+      xmlns:contact="http://www.w3.org/2000/10/swap/pim/contact#"
+      xmlns:dc="http://purl.org/dc/terms/"
+      xmlns:org="http://www.w3.org/ns/org#"
+      xmlns:v="http://rdf.data-vocabulary.org/#"
+      xmlns:swrc="http://swrc.ontoware.org/ontology#"
+      xmlns:owl="http://www.w3.org/2002/07/owl#"
+      prefix="foaf: http://xmlns.com/foaf/0.1/
+              contact: http://www.w3.org/2000/10/swap/pim/contact#
+              dc: http://purl.org/dc/terms/
+              v: http://rdf.data-vocabulary.org/#
+              swrc: http://swrc.ontoware.org/ontology#
+              owl: http://www.w3.org/2002/07/owl#
+              org: http://www.w3.org/ns/org#"
+      version="XHTML+RDFa 1.1"
+      about="" typeof="foaf:Document">
+ <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="cover.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#333">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#333">
+  <meta http-equiv="Content-language" content="en" />
+  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta name="author" content="Jakub Klímek" />
+  <meta name="summary" content="Ročníkový projekt, bakalářská práce, diplomová práce, softwarový projekt. Požadavky vedoucího, požadavky oponenta." />
+  <meta name="Description" content="Ročníkový projekt, bakalářská práce, diplomová práce, softwarový projekt. Požadavky vedoucího, požadavky oponenta." />
+  <meta name="Keywords" content="ročníkový projekt, bakalářská práce, diplomová práce, softwarový projekt, požadavky, vedoucí, oponent" />
+  <title>Požadavky na RP, BP, DP, SWP</title>
+ </head>
+ <body class="container text-left">
+  <div class="main">
+    <h1>Požadavky na RP, BP, DP, SWP</h1>
+    <p>
+      Jako zásadní problém pražských technických univerzit vnímám velice rozdílné požadavky na kvalitu ročníkových projektů (<abbr title="ročníkový projekt">RP</abbr>), bakalářských prací (<abbr title="bakalářská práce">BP</abbr>), diplomových prací (<abbr title="diplomová práce">DP</abbr>), softwarových projektů (<abbr title="softwarový projekt">SWP</abbr>), apod. ze stran vedoucích, oponentů a hodnotících komisí.
+      Co projde jako diplomka v jedné komisi či u jednoho oponenta nemusí projít ani jako bakalářka v komisi jiné, či u jiného oponenta.
+      Při posuzování prací často narážím na stále stejné nedostatky, a zároveň řešitelům prací opakuji stále stejné požadavky.
+      Pro eliminaci opakování a pro vyšší transparentnost zde uvádím svůj seznam požadavků na jednotlivé typy prací.
+    </p>
+    
+    <h2>Obsah</h2>
+    <ul>
+      <li><a href="#společná-kritéria">Společné technickí požadavky na softwarová díla</a></li>
+      <li><a href="#RP">Ročníkový projekt</a></li>
+      <li><a href="#SWP">Softwarový projekt</a></li>
+      <li><a href="#BP-DP">Bakalářská a diplomová práce</a></li>
+      <li><a href="#požadavky">Obecné požadavky na dokumentaci softwarového díla</a></li>
+    </ul>
+
+    <h2 id="společná-kritéria">Společné technické požadavky na softwarová díla</h2>
+    <p>
+      Ať už pracujete na ročníkovém projektu, nebo finišujete s diplomkou, jejíž částí je softwarové dílo, existují společné požadavky na to, co by toto dílo mělo splňovat.
+      Seznam můžete použít jako checklist před odevzdáním - já ho používám jako checklist při hodnocení.
+    </p>
+
+    <ol>
+      <li>
+        SW je vyvíjen v systému pro správu verzí (GitHub, GitLab).
+        Jedná se o školní dílo, a zpravidla není důvod pro to, aby repozitář nebyl veřejný.
+      </li>
+      <li>
+        SW je <a href="#požadavky">řádně zdokumentován</a>, včetně licence.
+        Doporučuje se <a href="https://opensource.org/licenses/MIT">licence MIT</a>.
+      </li>
+      <li>
+        SW lze snadno nasadit, včetně testovacích dat.
+        V době <a href="https://www.docker.com/">Dockeru</a> není důvod, aby tento proces měl více jak cca 3-5 kroků, které lze pomocí copy&amp;paste provést.
+        Myslete na oponenta, recenzenta publikace a nebo autora přehledového článku, který bude za 5 let chtít váš SW vyzkoušet.
+      </li>
+      <li>
+        Pokud to lze, SW má běžící online demo.
+        To lze zařídit pomocí <a href="https://pages.github.com/">GitHub pages</a>, <a href="https://www.heroku.com/">Heroku</a>, školní virtuálky po dohodě s vedoucím, apod.
+      </li>
+      <li>
+        SW je funkční.
+        Pokud SW nasadím, spustím a on spadne nebo nedělá to, co se v dokumentaci píše, je to špatně.
+      </li>
+      <li>
+        SW se chová slušně, tzn. žádné nedokumentované sledování, žádné vyžírání prostředků při jen trochu delším běhu, apod.
+      </li>
+    </ol>
+
+    <h2 id="RP">Ročníkový projekt (RP)</h2>
+    <p>
+      Ročníkový projekt na MFF UK vede vedoucí a uděluje za něj zápočet.
+      Posudek oponenta zde není vyžadován.
+      RP je nejčastěji řešen jako první část bakalářské práce.
+    </p>
+    <h3>Požadavky na zápočet za RP</h3>
+    <ol>
+      <li>
+        Kompletní specifikace výsledného software.
+        Ty zahrnuje:
+        <dl>
+          <dt>Analýza</dt>
+          <dd><a href="https://qracorp.com/write-clear-requirements-document/">Strukturované funkční a nefunkční požadavky</a>, <a href="https://www.lucidchart.com/pages/uml-use-case-diagram">use casy (případy užití)</a> a jejich popis, včetně scénářů práce se SW.
+            Na MFF je toto pokryto předmětem <a href="https://is.cuni.cz/studium/predmety/index.php?do=predmet&kod=NSWI041">NSWI041 - Úvod do softwarového inženýrství</a>.</dd>
+          <dt>Návrh</dt>
+          <dd>Jaké části SW bude mít, které technologie a nástroje byly zvažovány pro jejich implementaci, pomocí jakých kritérií, a které a proč byly vybrány</dd>
+        </dl>
+      </li>
+      <li>Zárodek implementace</li>
+      <li>
+        Zadání navazující bakalářské práce.
+        To &quot;vykopne&quot; řešitel a dotvarujeme ho společně v okamžiku, kdy je jasnější, co vznikne.
+    </ol>
+    <h3>Proces řešení RP</h3>
+    <p>Stanovení parametrů je nejprve na řešiteli, dále pak na vedoucím podle toho, jak práce postupují.</p>
+    <dl>
+      <dt>Forma</dt>
+      <dd>Pravidelné konzultace nebo videoreporty formou 3minutového screencastu s tím, co je od minule nového</dd>
+      <dt>Frekvence</dt>
+      <dd>Nejprve jednou za 14 dní, později dle potřeby</dd>
+      <dt>Nástroje</dt>
+      <dd>Pro textovou část <a href="https://www.overleaf.com/">online LaTeX editor Overleaf</a></dd>
+      <dd>Pro softwarovou část veřejný repozitář na <a href="https://github.com/">GitHub</a>. V případě obavy o ochranu osobních informací pak fakultní instance GitLab.</dd>
+    </dl>
+  
+  <h2 id="SWP">Softwarový projekt (SWP)</h2>
+  <p>
+    Softwarový projekt (SWP) na MFF UK má za cíl, aby si studenti vyzkoušeli práci v týmu, práci na rozsáhlejším softwarovém díle a typické fáze vývoje softwarového díla, tedy sběr požadavků, tvorbu specifikace, implementaci, testování, prezentaci a údržbu.
+    Řešení SWP má 2 formální části.
+    Tvorbu specifikace a vlastní implementaci.
+    Věcně by SWP měl být <a href="#požadavky">dokumentován jako každé jiné softwarové dílo</a>.
+    Fáze specifikace končí dokumentem pokrývajícím části <a href="#úvod">Úvod</a>, <a href="#analýza">Analýza</a> a <a href="#návrh">Návrh</a>.
+    Fáze implementace končí dokumenty obsahujícími jednotlivé dokumentace, tedy <a href="#uživatelská-dokumentace">uživatelskou</a>, <a href="#administrátorská-dokumentace">administrátorskou</a> a <a href="#programátorská-dokumentace">programátorskou</a>.
+    Uživatelská dokumentace pak obsahuje i kapitoly <a href="#vyhodnocení">vyhodnocení</a>, <a href="#testování">testování</a> a <a href="#závěr">závěr</a>.
+  </p>
+
+  <h3>Proces řešení SWP</h3>
+  <dl>
+    <dt>Forma</dt>
+    <dd>Pravidelné osobní konzultace</dd>
+    <dt>Frekvence</dt>
+    <dd>Týdenní, později dle potřeby</dd>
+    <dt>Nástroje</dt>
+    <dd>Pro textové části <a href="https://www.overleaf.com/">online LaTeX editor Overleaf</a></dd>
+    <dd>Pro softwarovou část veřejný repozitář na <a href="https://github.com/">GitHub</a>. V případě obavy o ochranu osobních informací pak fakultní instance GitLab.</dd>
+  </dl>
+
+  <h2 id="BP-DP">Bakalářská práce (BP), Diplomová práce (DP)</h2>
+  <p>
+    Mnou vedené bakalářské jsou převážně typu &quot;softwarové dílo&quot;, případně doplněné o snadnější výzkumný problém.
+    U diplomových prací jde zpravidla o náročnější výzkumný problém, či softwarové dílo většího rozsahu.
+    Formální požadavky na BP a DP se ale neliší.
+    Základní podmínkou pro úspěšné dokončení BP či DP, na které se ale překvapivě často zapomíná, je <em>splnění zadání</em>.
+    Tedy <em>vše</em>, co je napsáno v zadání, <em>musí</em> být nějak zpracováno ve výsledné práci, ať už vyřešením, nebo opodstatněným zdůvodněním, proč ta část zadání splněna není, a jaké pokusy o splnění byly podniknuty.
+    Jinak se struktura BP a DP typu &quot;softwarové dílo&quot; řídí strukturou <a href="#požadavky">dokumentace softwarového díla</a>.
+  </p>
+  
+  <h3>Proces řešení BP a DP</h3>
+  <p>Stanovení parametrů je nejprve na řešiteli, dále pak na vedoucím podle toho, jak práce postupují.</p>
+  <dl>
+    <dt>Forma</dt>
+    <dd>Pravidelné konzultace nebo videoreporty formou 3minutového screencastu s tím, co je od minule nového</dd>
+    <dt>Frekvence</dt>
+    <dd>Nejprve jednou za 14 dní, později dle potřeby</dd>
+    <dt>Nástroje</dt>
+    <dd>Pro textovou část <a href="https://www.overleaf.com/">online LaTeX editor Overleaf</a></dd>
+    <dd>Pro softwarovou část veřejný repozitář na <a href="https://github.com/">GitHub</a>. V případě obavy o ochranu osobních informací pak fakultní instance GitLab.</dd>
+  </dl>
+
+  <h2 id="požadavky">Obecné požadavky na dokumentaci softwarového díla</h2>
+  <p>
+    Dokumentace softwarového díla se odevzdává buď jako textová část BP či DP typu &quot;softwarové dílo&quot; či jako specifikace a dokumentace softwarového projektu.
+    Musí obsahovat následující části:
+  </p>
+  <dl>
+    <dt id="úvod">Úvod</dt>
+    <dd>
+      Úvod je psán pro neodborníka.
+      Uveďte kontext, ve kterém je práce řešena tak, aby ho pochopil každý.
+      Uveďtě, v jaké situaci v reálném světě se uživatel vašeho SW nachází, když by mu užití vašeho SW mělo pomoci, a jak.
+      Nechte ho přečíst a připomínkovat (pra)rodiče.
+    </dd>
+    
+    <dt id="analýza">Analýza</dt>
+    <dd>
+      <a href="https://qracorp.com/write-clear-requirements-document/">Strukturované funkční a nefunkční požadavky</a>, <a href="https://www.lucidchart.com/pages/uml-use-case-diagram">use casy (případy užití)</a> a jejich popis, včetně scénářů práce se SW.
+      Na MFF je toto pokryto předmětem <a href="https://is.cuni.cz/studium/predmety/index.php?do=predmet&kod=NSWI041">NSWI041 - Úvod do softwarového inženýrství</a>.
+    </dd>
+    
+    <dt id="návrh">Návrh</dt>
+    <dd>Jaké části SW bude mít, které technologie a nástroje byly zvažovány pro jejich implementaci, pomocí jakých kritérií, a které a proč byly vybrány.</dd>
+    
+    <dt id="implementace">Implementace</dt>
+    <dd>Jakékoliv zajímavé detaily zahrnující například odchylky od návrhu či jeho upřesnění, které vyplyne z potřeb během samotné implementace software.</dd>
+    
+    <dt id="uživatelská-dokumentace">Uživatelská dokumentace</dt>
+    <dd>
+      Screenshoty, popis typických scénářů z Analýzy, ale ilustrovaných na implementovaném SW.
+      Tj. co všechno a jak může uživatel se softwarem dělat.
+      Pro scénáře je třeba mít připravena data, a, pokud možno, živou instanci pro testování tak, aby oponent mohl scénáře projít.
+      Ideálně je hostovaná na GitHubu jako <a href="https://pages.github.com/">GitHub Pages</a>.
+    </dd>
+    
+    <dt id="vývojářská-dokumentace">Vývojářská dokumentace</dt>
+    <dd>
+      Zahrnuje komentáře v kódu, a její část může být i generovaná.
+      Nicméně musí zahrnovat i ručně psanou část pro vývojáře, který k vašemu SW přijde a měl by mu porozumět tak, aby byl schopen ho rozšířit a pokračovat v jeho vývoji.
+      Ideálně je hostovaná na GitHubu jako <a href="https://pages.github.com/">GitHub Pages</a>.
+    </dd>
+    
+    <dt id="administrátorská-dokumentace">Administrátorská dokumentace</dt>
+    <dd>
+      Obsahuje instrukce pro administrátora pracovní stanice nebo serveru, kam je třeba vaše řešení nasadit.
+      Takovým administrátorem je i oponent.
+      Musí zahrnovat kompletní požadavky na prostředí, tj. OS a jeho verze, potřebné knihovny atd.
+      Musí obsahovat odkaz na GitHub/GitLab repozitář, kde byl SW vyvíjen, a který tag/commit je ten, který byl s prací odevzdán.
+      Musí zahrnovat stručné a jasné instrukce, jak software naklonovat z repozitáře, jak jej zbuildit a spustit.
+      V době Dockeru není důvod, aby takové instrukce zahrnovaly více jak 3-4 copy&quot;paste kroky.
+      Ověřte si, že na čerstvě nainstalovaném PC (virtuálce) lze software (včetně testovacích dat) dle instrukcí rozběhnout a projít uživatelské scénáře.
+      Ideálně je administrátorská dokumentace hostovaná na GitHubu jako <a href="https://pages.github.com/">GitHub Pages</a>, nebo je přímo obsahem <code>README.md</code> souboru v kořeni repozitáře.
+    </dd>
+    
+    <dt id="evaluace">Evaluace</dt>
+    <dd>
+      Pokud SW implementuje nějaký algoritmus či proces, měla by tato část obsahovat popis vyhodnocení jak bylo ověřeno, že SW pracuje správně, tj. dělá co má, vzhledem k tomu, co měl implementovat.
+    </dd>
+
+    <dt id="testování">Testování</dt>
+    <dd>
+      Obsahuje přehled toho, jak byl software testován.
+      To typicky zahrnuje unit testy (jejich počet, pokrytí kódu), výkonnostní testování (jaký HW, jaká část SW jak dlouho tvala) a uživatelské testování (jaký scénář, kolik lidí, přehled zpětné vazby).
+    </dd>
+    
+    <dt id="závěr">Závěr</dt>
+    <dd>Co se povedlo, co se nepovedlo, co je nově možné pomocí SW dělat a jak by šlo do budoucna SW rozšiřovat</dd>
+  </dl>
+
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.0/anchor.min.js"></script>
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+      anchors.add('h2').add('h3').add('dt');
+    </script>
+</body>
+</html>
