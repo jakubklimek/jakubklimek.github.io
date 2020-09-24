@@ -44,15 +44,15 @@
   <meta http-equiv="Content-language" content="en" />
   <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
   <meta name="author" content="Jakub Klímek" />
-  <meta name="summary" content="NSWI144 course information" />
+  <meta name="summary" content="NSWI144 Data on the Web course information" />
   <meta name="Description" content="Information for students of the NSWI144 course on data integration and quality" />
   <meta name="Keywords" content="linked data, integration, quality, nswi144" />
-  <title>NSWI144 - Data Integration and Quality</title>
+  <title>NSWI144 - Data on the Web semestral assignment</title>
   <base href="https://jakub.klímek.com/"/>
  </head>
  <body class="container text-left">
   <div class="main">
-    <h1>NSWI144 - Data Integration and Quality - Semestral assignment specification</h1>
+    <h1>NSWI144 - Data on the Web - Semestral assignment specification</h1>
     <h2>Briefly</h2>
     <ol>
        <li>Identify source data</li>
@@ -81,7 +81,7 @@
          <li>Folder <code>source</code> containing:</li>
          <ol>
             <li>TXT file <code>description.txt</code> (UTF-8 encoded) with description of the selected data - for each data source: Format (XML/HTML/CSV/...), tools used for triplification, link to the datasource</li>
-            <li>PNG file <code>diagram.png</code> (UML class diagrams style)</li>
+            <li>PNG file <code>diagram.png</code> (UML class diagrams style) showing concepts and relations in the data</li>
          </ol>
       </ol>
       <h3>Part 2 - transformation of source data into RDF</h3>
@@ -108,7 +108,7 @@
          <ol>
             <li>Subfolder <code>triplifier</code> containing the triplification scripts</li>
             <li>Subfolder <code>output</code> containing the resulting RDF data (TIP: File extensions: Turtle: <code>.ttl</code>, N-Triples: <code>.nt</code>, RDF/XML: <code>.rdf</code>)</li>
-            <li>Subfolder <code>catalog</code> containing a catalog according to DCAT-AP v1.1 in Turtle syntax</li>
+            <li>For phase 2, subfolder <code>catalog</code> containing a catalog according to DCAT-AP v1.1 and VoID in Turtle syntax</li>
          </ol>
       </ol>
       <h3>Part 3 - Link Discovery (Silk)</h3>
