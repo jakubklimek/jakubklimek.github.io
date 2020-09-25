@@ -1,0 +1,28 @@
+@media (prefers-color-scheme: dark) {
+html,
+body {
+  background-color: #333;
+}
+body {
+  color: #fff;
+  text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
+}
+
+a:focus,
+a:hover {
+  color: #00bc8c;
+}
+
+a {
+  color: #00bc8c;
+}
+
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #fff;
+  border: .05rem solid #fff;
+}
+}
