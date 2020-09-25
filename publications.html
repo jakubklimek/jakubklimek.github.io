@@ -1,13 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.1//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-2.dtd">
-<html xml:lang="en" lang="en"
-      xmlns="http://www.w3.org/1999/xhtml" 
-      xmlns:foaf="http://xmlns.com/foaf/0.1/"
-      xmlns:contact="http://www.w3.org/2000/10/swap/pim/contact#"
-      xmlns:dc="http://purl.org/dc/terms/"
-      xmlns:org="http://www.w3.org/ns/org#"
-      xmlns:v="http://rdf.data-vocabulary.org/#"
-      xmlns:swrc="http://swrc.ontoware.org/ontology#"
-      xmlns:owl="http://www.w3.org/2002/07/owl#"
+<!DOCTYPE html>
+<html lang="en"
       prefix="foaf: http://xmlns.com/foaf/0.1/
               contact: http://www.w3.org/2000/10/swap/pim/contact#
               dc: http://purl.org/dc/terms/
@@ -15,7 +7,6 @@
               swrc: http://swrc.ontoware.org/ontology#
               owl: http://www.w3.org/2002/07/owl#
               org: http://www.w3.org/ns/org#"
-      version="XHTML+RDFa 1.1"
       about="" typeof="foaf:Document">
  <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -42,8 +33,7 @@
     <meta name="msapplication-TileColor" content="#333">
     <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#333">
-  <meta http-equiv="Content-language" content="en" />
-  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="author" content="Jakub Klímek" />
   <meta name="summary" content="Jakub Klímek - Publications" />
   <meta name="Description" content="Jakub Klímek" />
@@ -53,7 +43,7 @@
  </head>
  <body about="" rel="foaf:topic" resource="#me" class="container text-left">
   <div class="main">
-    <span about="https://jakub.klímek.com/#me" rel="owl:sameAs" resource="http://dblp.l3s.de/d2r/resource/authors/Jakub_Kl%C3%ADmek"/>
+    <span about="https://jakub.klímek.com/#me" rel="owl:sameAs" resource="http://dblp.l3s.de/d2r/resource/authors/Jakub_Kl%C3%ADmek"></span>
     <h1>Jakub Klímek - Publications</h1>
     <h2>Journal papers</h2>
       <ol reversed="reversed">
@@ -136,7 +126,7 @@
           <a class="author" rel="dc:creator foaf:maker" href="http://www.ksi.mff.cuni.cz/~necasky#me">Nečaský M.</a>,
           <a class="author" rel="dc:creator foaf:maker" href="https://jakub.klímek.com/#me">Klímek J.</a>,
           <a class="author" rel="dc:creator foaf:maker" href="http://mynarz.net/#jindrich">Mynarz J.</a>,
-          <a class="author" rel="dc:creator foaf:maker" href="http://purl.org/knap#me">Knap T.</a>,
+          <span class="author" rel="dc:creator foaf:maker">Knap T.</span>,
           <span class="author">Svátek V.</span>,
           <span class="author">Stárka J.</span>:
         	<a class="title" property="dc:title foaf:name" rel="foaf:page" href="https://dx.doi.org/10.1016/j.compind.2013.12.006">Linked data support for filing public contracts</a>, 
@@ -296,7 +286,7 @@
         </li>
 	<li typeof="foaf:Document swrc:InProceedings">
           <a class="author" rel="dc:creator foaf:maker" href="http://www.ksi.mff.cuni.cz/~helmich#me">Helmich J.</a>,
-          <a class="author" rel="dc:creator foaf:maker">Potoček T.</a>,
+          <span class="author" rel="dc:creator foaf:maker">Potoček T.</span>,
           <a class="author" rel="dc:creator foaf:maker" href="https://jakub.klímek.com/#me">Klímek J.</a>,
           <a class="author" rel="dc:creator foaf:maker" href="http://www.ksi.mff.cuni.cz/~necasky#me">Nečaský M.</a>:
           <a class="title" property="dc:title foaf:name" rel="foaf:page" href="https://doi.org/10.1145/3102254.3102261">Towards Easier Visualization of Linked Data for Lay Users</a>, 
@@ -307,11 +297,11 @@
           <span property="dc:issued" datatype="xsd:gYear">2017</span>.
         </li>
         <li typeof="foaf:Document swrc:InProceedings">
-          <a class="author" rel="dc:creator foaf:maker">Mynarz J.</a>,
-          <a class="author" rel="dc:creator foaf:maker">Svátek V.</a>,
-          <a class="author" rel="dc:creator foaf:maker">Karampatakis S.</a>,
+          <span class="author" rel="dc:creator foaf:maker">Mynarz J.</span>,
+          <span class="author" rel="dc:creator foaf:maker">Svátek V.</span>,
+          <span class="author" rel="dc:creator foaf:maker">Karampatakis S.</span>,
           <a class="author" rel="dc:creator foaf:maker" href="https://jakub.klímek.com/#me">Klímek J.</a>,
-          <a class="author" rel="dc:creator foaf:maker">Bratsas C.</a>:
+          <span class="author" rel="dc:creator foaf:maker">Bratsas C.</span>:
           <a class="title" property="dc:title foaf:name" rel="foaf:page" href="http://ceur-ws.org/Vol-1695/paper25.pdf">Modeling Fiscal Data with the Data Cube Vocabulary</a>, 
           In the Joint Proceedings of the Posters and Demos Track of the 12th International Conference on Semantic Systems - SEMANTiCS2016 and the 1st International Workshop on Semantic Change & Evolving Semantics (SuCCESS'16) co-located with the 12th International Conference on Semantic Systems (<a class="venue" rel="dc:isPartOf" href="http://2016.semantics.cc/">SEMANTiCS 2016</a>), Leipzig, Germany, September&nbsp;2016.
           <span class="publisher" property="dc:publisher">CEUR Workshop Proceedings</span>,
@@ -319,13 +309,13 @@
           <span property="dc:issued" datatype="xsd:gYear">2016</span>.
         </li>
         <li typeof="foaf:Document swrc:InProceedings">
-          <a class="author" rel="dc:creator foaf:maker">Mynarz J.</a>,
+          <span class="author" rel="dc:creator foaf:maker">Mynarz J.</span>,
           <a class="author" rel="dc:creator foaf:maker" href="https://jakub.klímek.com/#me">Klímek J.</a>,
-          <a class="author" rel="dc:creator foaf:maker">Dudáš M.</a>,
+          <span class="author" rel="dc:creator foaf:maker">Dudáš M.</span>,
           <a class="author" rel="dc:creator foaf:maker" href="http://www.ksi.mff.cuni.cz/~skoda#me">Škoda P.</a>,
-          <a class="author" rel="dc:creator foaf:maker">Engels C.</a>,
-          <a class="author" rel="dc:creator foaf:maker">Musyaffa F.A.</a>,
-          <a class="author" rel="dc:creator foaf:maker">Svátek V.</a>:
+          <span class="author" rel="dc:creator foaf:maker">Engels C.</span>,
+          <span class="author" rel="dc:creator foaf:maker">Musyaffa F.A.</span>,
+          <span class="author" rel="dc:creator foaf:maker">Svátek V.</span>:
           <a class="title" property="dc:title foaf:name" rel="foaf:page" href="http://ceur-ws.org/Vol-1654/article-04.pdf">Reusable transformations of Data Cube Vocabulary datasets from the fiscal domain</a>, 
           Proceedings of the 4th International Workshop on Semantic Statistics (<a class="venue" rel="dc:isPartOf" href="http://semstats.org/2016/">SemStats 2016</a>), Kobe, Japan, October&nbsp;2016.
           <span class="publisher" property="dc:publisher">CEUR Workshop Proceedings</span>,
@@ -367,9 +357,9 @@
           <span property="dc:issued" datatype="xsd:gYear">2016</span>. 
 		</li>
         <li typeof="foaf:Document swrc:InProceedings">
-          <a class="author" rel="dc:creator foaf:maker">Svátek V.</a>,
-          <a class="author" rel="dc:creator foaf:maker">Kompuš P.</a>,
-          <a class="author" rel="dc:creator foaf:maker">Dudáš M.</a>,
+          <span class="author" rel="dc:creator foaf:maker">Svátek V.</span>,
+          <span class="author" rel="dc:creator foaf:maker">Kompuš P.</span>,
+          <span class="author" rel="dc:creator foaf:maker">Dudáš M.</span>,
           <a class="author" rel="dc:creator foaf:maker" href="http://www.ksi.mff.cuni.cz/~necasky#me">Nečaský M.</a>,
           <a class="author" rel="dc:creator foaf:maker" href="https://jakub.klímek.com/#me">Klímek J.</a>:
           <a class="title" property="dc:title foaf:name" rel="foaf:page" href="http://dl.acm.org/citation.cfm?doid=2814864.2814891">Procurement Notice Enrichment using Product Ontologies</a>, 
@@ -382,9 +372,9 @@
         <li typeof="foaf:Document swrc:InProceedings">
           <a class="author" rel="dc:creator foaf:maker" href="https://jakub.klímek.com/#me">Klímek J.</a>,
           <a class="author" rel="dc:creator foaf:maker" href="http://www.ksi.mff.cuni.cz/~necasky#me">Nečaský M.</a>,
-          <a class="author" rel="dc:creator foaf:maker">Kostov B.</a>,
-          <a class="author" rel="dc:creator foaf:maker">Blaško M.</a>,
-          <a class="author" rel="dc:creator foaf:maker">Křemen P.</a>:
+          <span class="author" rel="dc:creator foaf:maker">Kostov B.</span>,
+          <span class="author" rel="dc:creator foaf:maker">Blaško M.</span>,
+          <span class="author" rel="dc:creator foaf:maker">Křemen P.</span>:
           <a class="title" property="dc:title foaf:name" rel="foaf:page" href="http://www.scitepress.org/DigitalLibrary/PublicationsDetail.aspx?ID=Y9G9W0MJBqg=">Efficient Exploration of Linked Data Cloud</a>, 
           Proceedings of the DATA 2015 conference (<a rel="dc:isPartOf" class="venue" href="http://www.dataconference.org/">DATA 2015</a>), Colmar, France, July&nbsp;2015,
           <span class="publisher" property="dc:publisher">SCITEPRESS Digital Library</span>,
@@ -410,8 +400,8 @@
           April <span property="dc:issued" datatype="xsd:gYear">2015</span>. 
   			</li>
         <li typeof="foaf:Document swrc:InProceedings">
-          <a class="author" rel="dc:creator foaf:maker">Kučera J.</a>,
-          <a class="author" rel="dc:creator foaf:maker">Chlapek D.</a>,
+          <span class="author" rel="dc:creator foaf:maker">Kučera J.</span>,
+          <span class="author" rel="dc:creator foaf:maker">Chlapek D.</span>,
           <a class="author" rel="dc:creator foaf:maker" href="https://jakub.klímek.com/#me">Klímek J.</a>,
           <a class="author" rel="dc:creator foaf:maker" href="http://www.ksi.mff.cuni.cz/~necasky#me">Nečaský M.</a>:
         	<a class="title" href="http://ceur-ws.org/Vol-1343/paper5.pdf" rel="foaf:page"  property="dc:title foaf:name">Methodologies and best practices for Open Data publication</a>, in Proceedings of the Dateso 2015 Workshop on DAtabases, TExts, Specifications and Objects
@@ -458,7 +448,7 @@
         <li typeof="foaf:Document swrc:InProceedings">
           <a class="author" rel="dc:creator foaf:maker" href="http://www.ksi.mff.cuni.cz/~kozak#me">Kozák J.</a>,
           <a class="author" rel="dc:creator foaf:maker" href="http://www.ksi.mff.cuni.cz/~necasky#me">Nečaský M.</a>,
-          <a class="author" rel="dc:creator foaf:maker">Dědek J.</a>,
+          <span class="author" rel="dc:creator foaf:maker">Dědek J.</span>,
           <a class="author" rel="dc:creator foaf:maker" href="https://jakub.klímek.com/#me">Klímek J.</a>,
           <a class="author" rel="dc:creator foaf:maker" href="http://ufal.mff.cuni.cz/~hladka#me">Pokorný J.</a>:
           <a class="title" property="dc:title foaf:name" rel="foaf:page"  href="http://ceur-ws.org/Vol-1114/Session2_Kozak.pdf">Using Linked Data for better navigation in summaries of product characteristics</a>, 
@@ -469,7 +459,7 @@
         <li typeof="foaf:Document swrc:InProceedings">
           <a class="author" rel="dc:creator foaf:maker" href="http://www.ksi.mff.cuni.cz/~kozak#me">Kozák J.</a>,
           <a class="author" rel="dc:creator foaf:maker" href="http://www.ksi.mff.cuni.cz/~necasky#me">Nečaský M.</a>,
-          <a class="author" rel="dc:creator foaf:maker">Dědek J.</a>,
+          <span class="author" rel="dc:creator foaf:maker">Dědek J.</span>,
           <a class="author" rel="dc:creator foaf:maker" href="https://jakub.klímek.com/#me">Klímek J.</a>,
           <a class="author" rel="dc:creator foaf:maker" href="http://ufal.mff.cuni.cz/~hladka#me">Pokorný J.</a>:
           <a class="title" property="dc:title foaf:name" rel="foaf:page" href="http://dx.doi.org/10.1145/2539150.2539195">Linked Open Data for Healthcare Professionals</a>, 
@@ -483,7 +473,7 @@
           <a class="author" rel="dc:creator foaf:maker" href="http://www.ksi.mff.cuni.cz/~necasky#me">Nečaský M.</a>,
           <a class="author" rel="dc:creator foaf:maker" href="http://www.ksi.mff.cuni.cz/~holubova#me">Holubová I.</a>,
           <a class="author" rel="dc:creator foaf:maker" href="https://jakub.klímek.com/#me">Klímek J.</a>,
-          <a class="author" rel="dc:creator foaf:maker">Malý J.</a>,
+          <span class="author" rel="dc:creator foaf:maker">Malý J.</span>,
           <a class="title" property="dc:title foaf:name" rel="foaf:page" href="http://dx.doi.org/10.1145/2539150.2539189">Methodology for Design and Evolution of XML Schemas using Conceptual Modeling</a>, 
           in <a rel="dc:isPartOf" class="venue" href="http://www.iiwas.org/conferences/iiwas2013/">IIWAS '13</a>: Proceedings of the 15th International Conference on Information Integration and Web-based Applications &amp; Services, Vienna, Austria, December&nbsp;2013,
           <span class="publisher" property="dc:publisher">ACM New York</span>, 
@@ -493,9 +483,9 @@
   			</li>
         <li typeof="foaf:Document swrc:InProceedings">
           <span class="title">BEST PAPER AWARD</span>
-          <a class="author" rel="dc:creator foaf:maker">Brunetti J. M.</a>,
-          <a class="author" rel="dc:creator foaf:maker">Auer S.</a>,
-          <a class="author" rel="dc:creator foaf:maker">García R.</a>,
+          <span class="author" rel="dc:creator foaf:maker">Brunetti J. M.</span>,
+          <span class="author" rel="dc:creator foaf:maker">Auer S.</span>,
+          <span class="author" rel="dc:creator foaf:maker">García R.</span>,
           <a class="author" rel="dc:creator foaf:maker" href="https://jakub.klímek.com/#me">Klímek J.</a>,
           <a class="author" rel="dc:creator foaf:maker" href="http://www.ksi.mff.cuni.cz/~necasky#me">Nečaský M.</a>:
           <a class="title" property="dc:title foaf:name" rel="foaf:page" href="http://dx.doi.org/10.1145/2539150.2539162">Formal Linked Data Visualization Model</a> 
@@ -507,7 +497,7 @@
   			</li>
         <li typeof="foaf:Document swrc:InProceedings">
           <a class="author" rel="dc:creator foaf:maker" href="http://www.ksi.mff.cuni.cz/~necasky#me">Nečaský M.</a>,
-          <a class="author" rel="dc:creator foaf:maker" href="http://purl.org/knap#me">Knap T.</a>,
+          <span class="author" rel="dc:creator foaf:maker">Knap T.</span>,
           <a class="author" rel="dc:creator foaf:maker" href="https://jakub.klímek.com/#me">Klímek J.</a>,
           <a class="author" rel="dc:creator foaf:maker" href="http://www.ksi.mff.cuni.cz/~holubova#me">Holubová I.</a>,
           <a class="author" rel="dc:creator foaf:maker" href="http://ufal.mff.cuni.cz/~hladka#me">Vidová-Hladká B.</a>:
@@ -551,7 +541,7 @@
           <a class="author" rel="dc:creator foaf:maker" href="http://www.ksi.mff.cuni.cz/~necasky#me">Nečaský M.</a>,
           <a class="author" rel="dc:creator foaf:maker" href="http://jakubmaly.cz#me">Malý J.</a>,
         	<a class="author" rel="dc:creator foaf:maker" href="http://www.ksi.mff.cuni.cz/~richta#me">Richta K.</a>:
-          <a class="title" property="dc:title foaf:name">Modelování a evoluce XML schémat</a>, in the Proceedings of <a href="http://www.datakon.cz/2012/" rel="dc:isPartOf" class="venue">DATAKON&nbsp;2012</a>, Mikulov, Czech Republic, October&nbsp;2012, 
+          <span class="title" property="dc:title foaf:name">Modelování a evoluce XML schémat</span>, in the Proceedings of <a href="http://www.datakon.cz/2012/" rel="dc:isPartOf" class="venue">DATAKON&nbsp;2012</a>, Mikulov, Czech Republic, October&nbsp;2012, 
           <span property="dc:issued" datatype="xsd:gYear">2012</span>. 
   			</li>
         <li typeof="foaf:Document swrc:InProceedings">
@@ -693,11 +683,11 @@
   			</li>
   			<li typeof="foaf:Document swrc:InProceedings" about="http://dblp.l3s.de/d2r/resource/publications/conf/adbis/KlimekKLM09">
           <a class="author" rel="dc:creator foaf:maker" href="https://jakub.klímek.com/#me">Klímek J.</a>, 
-          <a class="author" rel="dc:creator foaf:maker"><span typeof="foaf:Person" property="foaf:name">Kopenec L.</span></a>, 
-          <a class="author" rel="dc:creator foaf:maker"><span typeof="foaf:Person" property="foaf:name">Loupal P.,</span></a> 
-          <a class="author" rel="dc:creator foaf:maker" href="http://jakubmaly.cz#me">Malý J.</a>:
+          <span class="author" rel="dc:creator foaf:maker"><span typeof="foaf:Person" property="foaf:name">Kopenec L.</span></span>, 
+          <span class="author" rel="dc:creator foaf:maker"><span typeof="foaf:Person" property="foaf:name">Loupal P.,</span></span> 
+          <span class="author" rel="dc:creator foaf:maker">Malý J.</span>:
   				<a class="title" property="dc:title foaf:name" rel="foaf:page" href="https://link.springer.com/chapter/10.1007/978-3-642-12082-4_13">XCase - A Tool for Conceptual XML Data Modeling</a>, in Advances in Databases and Information Systems, Associated Workshops and Doctoral Consortium of the 13th East European Conference, 
-          (<a rel="dc:isPartOf" class="venue">ADBIS&nbsp;2009</a>), Riga, Latvia, September 2009, volume 5968/2010 of Lecture Notes in Computer Science, 
+          (<span rel="dc:isPartOf" class="venue">ADBIS&nbsp;2009</span>), Riga, Latvia, September 2009, volume 5968/2010 of Lecture Notes in Computer Science, 
           <span class="publisher" property="dc:publisher">Springer</span>, ISBN:&nbsp;978-3-642-12081-7, ISSN:&nbsp;0302-9743 (Print) 1611-3349 (Online), 
           pages&nbsp;<span property="swrc:pages">96-103</span>, 
           March&nbsp;<span property="dc:issued" datatype="xsd:gYear">2010</span>.
@@ -705,10 +695,10 @@
         <li typeof="foaf:Document swrc:InProceedings">
           <a class="author" rel="dc:creator foaf:maker" href="http://www.ksi.mff.cuni.cz/~necasky#me">Nečaský M.</a>, 
           <a class="author" rel="dc:creator foaf:maker" href="https://jakub.klímek.com/#me">Klímek J.</a>, 
-          <a class="author" rel="dc:creator foaf:maker"><span typeof="foaf:Person" property="foaf:name">Kopenec L.</span></a>, 
-          <a class="author" rel="dc:creator foaf:maker"><span typeof="foaf:Person" property="foaf:name">Kučerová L.</span></a>, 
+          <span class="author" rel="dc:creator foaf:maker"><span typeof="foaf:Person" property="foaf:name">Kopenec L.</span></span>, 
+          <span class="author" rel="dc:creator foaf:maker"><span typeof="foaf:Person" property="foaf:name">Kučerová L.</span></span>, 
           <a class="author" rel="dc:creator foaf:maker" href="http://jakubmaly.cz#me">Malý J.</a>, 
-          <a class="author" rel="dc:creator foaf:maker"><span typeof="foaf:Person" property="foaf:name">Opočenská K.</span></a>: 
+          <span class="author" rel="dc:creator foaf:maker"><span typeof="foaf:Person" property="foaf:name">Opočenská K.</span></span>: 
           <span class="title" property="dc:title foaf:name">XCase - Nástroj pro Modelování XML Schémat Založený na Principu MDA</span>, in (<a class="venue" href="http://www.muni.cz/ics/events/calendar/2608?year=2008&amp;lang=cs" rel="dc:isPartOf">ITAT&nbsp;2008</a>) Informačné Technológie - Aplikácie a Teória, Hrebienok, Slovakia, September&nbsp;2008, Hrebienok, Vysoké Tatry, Slovakia, 
           <span class="publisher" property="dc:publisher">PONT Slovakia</span>, ISBN:&nbsp;978-80-969184-8-5, 
           pages&nbsp;<span property="swrc:pages">77-80</span>, 
@@ -718,11 +708,11 @@
     <h2>Book chapters</h2>
       <ol reversed="reversed">
         <li typeof="foaf:Document swrc:InProceedings">
-          <a class="author" rel="dc:creator foaf:maker">Svátek V.</a>,
-          <a class="author" rel="dc:creator foaf:maker">Mynarz J.</a>,
-          <a class="author" rel="dc:creator foaf:maker">Węcel K.</a>,
+          <span class="author" rel="dc:creator foaf:maker">Svátek V.</span>,
+          <span class="author" rel="dc:creator foaf:maker">Mynarz J.</span>,
+          <span class="author" rel="dc:creator foaf:maker">Węcel K.</span>,
           <a class="author" rel="dc:creator foaf:maker" href="https://jakub.klímek.com/#me">Klímek J.</a>,
-          <a class="author" rel="dc:creator foaf:maker" href="http://purl.org/knap#me">Knap T.</a>,
+          <span class="author" rel="dc:creator foaf:maker">Knap T.</span>,
           <a class="author" rel="dc:creator foaf:maker" href="http://www.ksi.mff.cuni.cz/~necasky#me">Nečaský M.</a>, 
           <a class="title" property="dc:title foaf:name" href="http://link.springer.com/chapter/10.1007/978-3-319-09846-3_10">Linked Open Data for Public Procurement</a>, 
           in <a class="venue" href="http://link.springer.com/book/10.1007/978-3-319-09846-3">Linked Open Data -- Creating Knowledge Out of Interlinked Data</a>,
@@ -732,9 +722,9 @@
           <span property="dc:issued" datatype="xsd:gYear">2014</span>. 
   			</li>
         <li typeof="foaf:Document swrc:InProceedings">
-          <a class="author" rel="dc:creator foaf:maker">Auer S.</a>,
-          <a class="author" rel="dc:creator foaf:maker">Ngomo A.-C. N.</a>,
-          <a class="author" rel="dc:creator foaf:maker">Frischmuth P.</a>,
+          <span class="author" rel="dc:creator foaf:maker">Auer S.</span>,
+          <span class="author" rel="dc:creator foaf:maker">Ngomo A.-C. N.</span>,
+          <span class="author" rel="dc:creator foaf:maker">Frischmuth P.</span>,
           <a class="author" rel="dc:creator foaf:maker" href="https://jakub.klímek.com/#me">Klímek J.</a>:
           <a class="title" property="dc:title foaf:name" href="http://books.google.com/books?hl=en&amp;lr=&amp;id=mXr6AQAAQBAJ&amp;oi=fnd&amp;pg=PA169&amp;dq=info:nX87-sEp63kJ:scholar.google.com">Linked Data in Enterprise Integration</a>, 
           in <a class="venue" href="http://www.crcpress.com/product/isbn/9781466578371">Big Data Computing</a>,

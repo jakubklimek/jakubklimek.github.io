@@ -1,13 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.1//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-2.dtd">
-<html xml:lang="en" lang="en"
-      xmlns="http://www.w3.org/1999/xhtml" 
-      xmlns:foaf="http://xmlns.com/foaf/0.1/"
-      xmlns:contact="http://www.w3.org/2000/10/swap/pim/contact#"
-      xmlns:dc="http://purl.org/dc/terms/"
-      xmlns:org="http://www.w3.org/ns/org#"
-      xmlns:v="http://rdf.data-vocabulary.org/#"
-      xmlns:swrc="http://swrc.ontoware.org/ontology#"
-      xmlns:owl="http://www.w3.org/2002/07/owl#"
+<!DOCTYPE html>
+<html lang="en"
       prefix="foaf: http://xmlns.com/foaf/0.1/
               contact: http://www.w3.org/2000/10/swap/pim/contact#
               dc: http://purl.org/dc/terms/
@@ -15,7 +7,6 @@
               swrc: http://swrc.ontoware.org/ontology#
               owl: http://www.w3.org/2002/07/owl#
               org: http://www.w3.org/ns/org#"
-      version="XHTML+RDFa 1.1"
       about="" typeof="foaf:Document">
  <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -39,8 +30,7 @@
     <meta name="msapplication-TileColor" content="#333">
     <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#333">
-  <meta http-equiv="Content-language" content="en" />
-  <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="author" content="Jakub Klímek" />
   <meta name="summary" content="NSWI144 Data on the Web course information" />
   <meta name="Description" content="Information for students of the NSWI144 course on data integration and quality" />
@@ -77,23 +67,23 @@
       <h4>How</h4>
       <ol>
          <li>Folder <code>source</code> containing:</li>
-         <ol>
+         <li><ol>
             <li>TXT file <code>description.txt</code> (UTF-8 encoded) with description of the selected data - for each data source: Format (XML/HTML/CSV/...), tools used for triplification, link to the datasource</li>
             <li>PNG file <code>diagram.png</code> (UML class diagrams style) showing concepts and relations in the data</li>
-         </ol>
+         </ol></li>
       </ol>
       <h3>Part 2 - transformation of source data into RDF</h3>
       <h4>What</h4>
       <ol>
          <li>Triplification script (TARQL, XSLT, ...) which can be run on the downloaded data - 1 for each data source</li>
          <li>Resulting RDF data has correct format</li>
-         <ol>
+         <li><ol>
             <li>it represents the source data</li>
             <li>it uses correctly defined IRI patterns</li>
             <li>it uses correct data types and language tags</li>
             <li>entities from source data are correctly separated and interlinked</li>
             <li>adheres to the "Link not Label" pattern</li>
-         </ol>
+         </ol></li>
          <li>Transformation script uses a language appropriate for the source data: XSLT (XML), XQuery (XML), R2RML (RDB), Tarql (CSV, Excel), Java+Jsoup (HTML)</li>
          <li>Feedback from the first phase incorporated</li>
          <li>In the first phase, correct vocabularies do not have to be used.</li>
@@ -103,11 +93,11 @@
       <h4>How</h4>
       <ol>
          <li>Folder <code>download</code> containing:</li>
-         <ol>
+         <li><ol>
             <li>Subfolder <code>triplifier</code> containing the triplification scripts</li>
             <li>Subfolder <code>output</code> containing the resulting RDF data (TIP: File extensions: Turtle: <code>.ttl</code>, N-Triples: <code>.nt</code>, RDF/XML: <code>.rdf</code>)</li>
             <li>For phase 2, subfolder <code>catalog</code> containing a catalog according to DCAT-AP v1.1 and VoID in Turtle syntax</li>
-         </ol>
+         </ol></li>
       </ol>
       <h3>Part 3 - Link Discovery (Silk)</h3>
       <h4>What</h4>
@@ -119,25 +109,25 @@
       <h4>How</h4>
       <ol>
          <li>Folder <code>linking</code> containing:</li>
-         <ol>
+         <li><ol>
             <li>Subfolder <code>internal</code> containing:</li>
-            <ol>
+            <li><ol>
                <li>Subfolder for each linking task between your datasets, named after the linked datasets, and in it:</li>
-               <ol>
+               <li><ol>
                   <li>SILK-LSL script or export of the linking task from Silk Workbench</li>
                   <li>The resulting linkset in N-Triples</li>
                   <li>The VoID metadata file</li>
-               </ol>
-            </ol>
+               </ol></li>
+            </ol></li>
             <li>Subfolder <code>external</code> containing:</li>
-            <ol>
+            <li><ol>
                <li>Subfolder for each linking task between your dataset and a foreign dataset, named after the linked datasets, and in it:</li>
-               <ol>
+               <li><ol>
                   <li>SILK-LSL script or export of the linking task from Silk Workbench</li>
                   <li>The resulting linkset in N-Triples</li>
                   <li>The VoID metadata file</li>
-               </ol>
-            </ol>
+               </ol></li>
+            </ol></li>
          </ol>
       </ol>
       <h3>Part 4 - SPARQL querying</h3>
