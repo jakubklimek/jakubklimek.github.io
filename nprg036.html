@@ -45,10 +45,12 @@
     <h1>NPRG036 - Data Formats</h1>
     <h2>Basic information - summer 2021</h2>
     <ol>
-      <li>The lectures will be asynchronous, with slides and videos provided on this webpage.</li>
-      <li>Organization of tutorials and homework <strong>TBD</strong></li>
+      <li>The <a href="#lectures">lectures</a> and <a href="#tutorials">tutorials</a> will be asynchronous, with slides and videos provided on this webpage.</li>
+      <li>Consultations are possible in the scheduled time slots for tutorials via Zoom, link distributed via e-mail.</li>
+      <li><a href="#homework">Homework</a> will be done in groups and will have 4 parts.</li>
+      <li>All parts of the <a href="#homework">homework</a> need to be turned in before the individual deadlines in order to proceed to the final exam.</li>
     </ol>
-    <h2>Lectures</h2>
+    <h2 id="lectures">Lectures</h2>
     <p>
           This is a preliminary plan of lectures.
           Slides and videos of lectures will be added as they become available.
@@ -68,10 +70,79 @@
       <li><strong>2021-05-24</strong>: Key-value formats - INI, conf, YAML, multimedia formats</li>
       <li><strong>2021-05-31</strong>: No lecture</li>
     </ol>
+    <h2 id="tutorials">Tutorials</h2>
+    <p>
+      In this section, the links to tutorials with examples will be made available.
+      There are three instances of tutorials per week.
+    </p>
+    <ol>
+      <li><code>T1</code>: Wednesdays 10:40</li>
+      <li><code>T2</code>: Wednesdays 15:40</li>
+      <li><code>T3</code>: Fridays 10:40</li>
+    </ol>
+    <h2 id="homework">Homework</h2>
+    <p>
+      Homework will be done in groups and will have 4 parts.
+      All parts of homework need to be turned in before the individual deadlines in order to proceed to the final exam.
+      The tutor's comments to the homework solutions are to be addressed when the next part is turned in.
+    </p>
+
+    <h3>Homework part 1: Conceptual model</h3>
+    <dl>
+      <dt>
+        Deadline
+      </dt>
+      <dd>
+        Before tutorials in Week 3.
+        <ol>
+          <li><code>2021-03-17T10:40:00</code> for <code>T1</code></li>
+          <li><code>2021-03-17T15:40:00</code> for <code>T2</code></li>
+          <li><code>2021-03-19T10:40:00</code> for <code>T3</code></li>
+        </ol>
+      </dd>
+      <dt>
+        What
+      </dt>
+      <dd>
+        Choose a domain/topic for your homework.
+        Create a conceptual model of that domain using UML Class Diagrams and a textual description of what is represented in the domain model.
+        The consecutive homework parts will then be governed by this conceptual model.
+        Quantitative requirements:
+        <ol>
+          <li>5 to 10 classes</li>
+          <li>Each class 3 to 5 attributes, some with multiplicity <code>0..*</code></li>
+          <li>At least 4 associations. Include association end multiplicities <code>0..*</code>, <code>0..1</code>, <code>1..1</code></li>
+        </ol>
+      </dd>
+      <dt>
+        How
+      </dt>
+      <dd>
+        Use a tool that allows you to draw UML Class Diagrams and export them as SVG.
+        For example, <a href="https://www.diagrams.net/">diagrams.net</a>.
+        The homework is to be turned in via the study system.
+        <ol>
+          <li>A zipped file named <code>NPRG036-&lt;groupID&gt;.zip</code>, e.g. <code>NPRG036-T1G4.zip</code></li>
+          <li>Folder <code>1</code> containing <code>domain.svg</code> with the image of the conceptual model and <code>domain.txt</code> in <code>UTF-8</code> containing the textual description of the domain model.</li>
+        </ol>
+      </dd>
+    </dl>
+
+    <h3>Homework part 2: Graph models</h3>
+    <!-- Grafy: reprezentace vlastnich, vytvorenych dat v RDF (vlastni RDFS slovnik + skos na ciselniky), par SPARQL dotazu a reprezentace jako LPG a par Cypher dotazu -->
+    <p><strong>To be specified</strong></p>
+
+    <h3>Homework part 3: Hierarchical models</h3>
+    <!--Hierarchie: reprezentace stejnych dat jako XML + XML Schema + XPath dotazy + XSLT do RDF (co nejpodobnejsi datum z 2), a jako JSON + JSON Schema + JSON-LD kontext (co nejpodobnejsi datum z 2)-->
+    <p><strong>To be specified</strong></p>
+
+    <h3>Homework part 4: Relational model</h3>
+    <!--Relacni model: reprezentace stejnych dat jako CSV + CSVW vcetne mapovani na RDF (co nejpodobnejsi datum z 2)-->
+    <p><strong>To be specified</strong></p>
   </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>  <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
 <script>
-   anchors.add();
+   anchors.add().add('dt');
 </script>
 </body>
 </html>
