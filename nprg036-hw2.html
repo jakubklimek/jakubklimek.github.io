@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en"
+      prefix="foaf: http://xmlns.com/foaf/0.1/
+              contact: http://www.w3.org/2000/10/swap/pim/contact#
+              dc: http://purl.org/dc/terms/
+              v: http://rdf.data-vocabulary.org/#
+              swrc: http://swrc.ontoware.org/ontology#
+              owl: http://www.w3.org/2002/07/owl#
+              org: http://www.w3.org/ns/org#"
+      about="" typeof="foaf:Document">
+ <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="dark.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#333">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#333">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="author" content="Jakub Klímek" />
+  <meta name="summary" content="NPRG036 - Data Formats homework 2 assignment" />
+  <meta name="Description" content="NPRG036 - Data Formats homework 2 assignment" />
+  <meta name="Keywords" content="data formats, rdf, turtle, sparql, cypher" />
+  <title>NPRG036 - Data Formats - Homework 2 assignment</title>
+  <base href="https://jakub.klímek.com/"/>
+ </head>
+ <body class="container text-left">
+  <div class="main">
+    <h1>NPRG036 - Data Formats - Homework 2 assignment</h1>
+    <dl>
+      <dt>
+        What
+      </dt>
+      <dd>
+        In this homework, you will create data samples and queries using graph data models and query languages.
+        <ol>
+          <li>
+            Fix the conceputal model from the previous homework based on the tutor's notes.
+          </li>
+          <li>
+            For representation of data in RDF, you will need to cover the conceptual model with classes and properties either from <a href="https://lov.linkeddata.es/dataset/lov/">existing vocabularies</a> where appropriate, or by defining new ones using <a href="https://docs.google.com/presentation/d/1SwDgvaTJvUBY_5_EOG3V_ajJsIZadzFNNnJgYqa1Qcw/edit#slide=id.gba51ba2639_1_671">RDF Schema</a>.
+            For the newly defined classes and properties use the <code>@prefix ex: &lt;http://example.org/vocabulary/&gt; .</code> prefix and attach a human readable label and definition to each one of them.
+            Example of a conceptual and covered models: <img src="./assets/images/nprg036-hw2-model.svg"/>, <img src="./assets/images/nprg036-hw2-model-vocabs.svg"/>
+          </li>
+          <li>
+            Represent the data in RDF using <a href="https://www.w3.org/TR/turtle/">RDF Turtle</a>.
+          </li>
+          <li>
+            Load the RDF data into a triplestore such as <a href="https://jena.apache.org/documentation/fuseki2/">Apache Jena Fuseki</a>, <a href="https://rdf4j.org/download/">Eclipse rdj4f</a> or <a href="http://vos.openlinksw.com/owiki/wiki/VOS/VOSDownload">Openlink Virtuoso Open-Source</a>.    
+          </li>
+          <li>
+            Using SPARQL, develop a few meaningful executable queries on top of your data, including a comment explaining what each query does.
+          </li>
+          <li>
+            For representation of data in LPG, create a visualization of a data sample like the one in the <a href="https://docs.google.com/presentation/d/1BoPwtIHgPVlQlgx5muGRzPw4rY-iymzd_YhUgu_1yDs/edit#slide=id.gbebfac418a_0_320">lecture</a>.
+            Try to utilize the possibility of edges having properties.
+          </li>
+          <li>
+            Represent the data in LPG using an executable Cypher script (see the <a href="https://docs.google.com/presentation/d/1-pzZve9bL483ThSutRkv4Vd6pd-Q58-7CQZaa26CSzg/edit#slide=id.gc897bfdfa1_0_31">Movies example in tutorials</a>).
+          </li>
+          <li>
+            Load the LPG data into <a href="https://neo4j.com/download/">Neo4j</a>.
+          </li>
+          <li>
+            Using Cypher, develop a few meaningful queries on top of your data, including a comment explaining what each query does.
+          </li>
+        </ol>
+      </dd>
+      <dt>
+        Quantitative requirements
+      </dt>
+      <dd>
+        <ol>
+          <li>
+            At least 3 instances of each class.
+            In case of inheritance hierarchies, one of each children is enough.
+          </li>
+          <li>
+            Every attribute used at least once.
+          </li>
+          <li>
+            At least 3 instances of each association.
+          </li>
+          <li>
+            At least 4 non-trivial SPARQL queries
+          </li>
+          <li>
+            At least 4 non-trivial Cypher queries
+          </li>
+        </ol>
+      </dd>
+      <dt>
+        How
+      </dt>
+      <dd>
+        <ol>
+          <li>
+            Replace the HW1 file with a fixed one in the HW1 column.
+          </li>
+          <li>
+            To the HW2 column, upload a zipped file named <code>NPRG036-HW2-&lt;groupID&gt;.zip</code>, e.g. <code>NPRG036-HW2-T1G4.zip</code>.
+          </li>
+          <li>
+            Zip file will contain folder <code>2</code>, containing:
+            <ol>
+              <li>
+                Folder <code>rdf</code> containing:
+                <ol>
+                  <li>
+                    Folder <code>model</code> containing:
+                    <ol>
+                      <li>
+                        File <code>covered.svg</code> with the conceptual model covered by RDF vocabularies
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    Folder <code>data</code> containing:
+                    <ol>
+                      <li>
+                        File <code>data.ttl</code> with data in valid RDF Turtle
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    Folder <code>queries</code> containing:
+                    <ol>
+                      <li>
+                        Files <code>query-&lt;number&gt;.sparql</code>, such as <code>query-1.sparql</code> with an executable query and comment
+                      </li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                Folder <code>lpg</code> containing:
+                <ol>
+                  <li>
+                    Folder <code>model</code> containing:
+                    <ol>
+                      <li>
+                        File <code>example.svg</code> with the example of the LPG structure
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    Folder <code>data</code> containing:
+                    <ol>
+                      <li>
+                        File <code>data.cypher</code> with data in Cypher script, loadable to Neo4j
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    Folder <code>queries</code> containing:
+                    <ol>
+                      <li>
+                        Files <code>query-&lt;number&gt;.cypher</code>, such as <code>query-1.cypher</code> with an executable query and comment
+                      </li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </dd>
+    </dl>
+    <h2>Frequently Asked Questions (FAQ)</h2>
+    <dl>
+      <dt>What is a trivial query?</dt>
+      <dd>
+        Listing of entities of a certain type, optionally filtered by a certain value.
+      </dd>
+      <dd>
+        Counting of entities of a certain type, optionally filtered by a certain value.
+      </dd>
+    </dl>
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>  <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+<script>
+   anchors.add().add('dt').add('dd');
+</script>
+</body>
+</html>
