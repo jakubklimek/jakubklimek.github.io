@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en"
+      prefix="foaf: http://xmlns.com/foaf/0.1/
+              contact: http://www.w3.org/2000/10/swap/pim/contact#
+              dc: http://purl.org/dc/terms/
+              v: http://rdf.data-vocabulary.org/#
+              swrc: http://swrc.ontoware.org/ontology#
+              owl: http://www.w3.org/2002/07/owl#
+              org: http://www.w3.org/ns/org#"
+      about="" typeof="foaf:Document">
+ <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="dark.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#333">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#333">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="author" content="Jakub Klímek" />
+  <meta name="summary" content="NPRG036 - Data Formats homework 1 assignment" />
+  <meta name="Description" content="NPRG036 - Data Formats homework 1 assignment" />
+  <meta name="Keywords" content="data formats, conceptual model" />
+  <title>NPRG036 - Data Formats - Homework 1 assignment</title>
+  <base href="https://jakub.klímek.com/"/>
+ </head>
+ <body class="container text-left">
+  <div class="main">
+    <h1><a href="./nprg036.html">NPRG036 - Data Formats</a> - Homework 1 assignment</h1>
+    <dl>
+<!--      <dt>
+        Deadline
+      </dt>
+      <dd>
+        Before tutorials in Week 3.
+        <ol>
+          <li><code>2021-03-17T10:40:00</code> for <code>T1</code></li>
+          <li><code>2021-03-17T15:40:00</code> for <code>T2</code></li>
+          <li><code>2021-03-19T10:40:00</code> for <code>T3</code></li>
+        </ol>
+      </dd>-->
+      <dt>
+        What
+      </dt>
+      <dd>
+        Choose a domain/topic for your homework.
+        Create a conceptual model of that domain using UML Class Diagrams and a textual description of what is represented in the domain model.
+        The consecutive homework parts will then be governed by this conceptual model.
+        Quantitative requirements:
+        <ol>
+          <li>5 to 10 classes</li>
+          <li>Each class 3 to 5 attributes, some with multiplicity <code>0..*</code></li>
+          <li>At least 4 associations. Include association end multiplicities <code>0..*</code>, <code>0..1</code>, <code>1..1</code></li>
+        </ol>
+      </dd>
+      <dt>
+        How
+      </dt>
+      <dd>
+        Use a tool that allows you to draw UML Class Diagrams and export them as SVG.
+        For example, <a href="https://www.diagrams.net/">diagrams.net</a>.
+        The homework is to be turned in via the study system by a group leader.
+        <ol>
+          <li>A zipped file named <code>NPRG036-&lt;groupID&gt;.zip</code>, e.g. <code>NPRG036-T1G4.zip</code></li>
+          <li>Folder <code>1</code> containing <code>domain.svg</code> with the image of the conceptual model and <code>domain.txt</code> in <code>UTF-8</code> containing the textual description of the domain model.</li>
+        </ol>
+      </dd>
+      <dt id="hw1-common-mistakes">
+        Common mistakes
+      </dt>
+      <dd>
+        <ol>
+          <li>
+            Some of you were still thinking about data in terms of an application, and what the application means, instead of focusing on what the data represents in the real world.
+          </li>
+          <li>
+            Attributes should be primitive values (strings, dates, booleans) of the real world entity represented by the class.
+            When they are more complex, they typically represent another real world entity and its primitive attributes.
+          </li>
+          <li>
+            Common mistake was including attribute of another real world entity, which should be solved by introducing a new class and a relationship to it.
+            Typically something, which exists independently of the current entity, and has a label.
+            For instance, "country" attribute of a "customer".
+            Country exists independently of the customer.
+            Country name is an attribute of the "country" real world entity, not of the "customer".
+            "Customer" lives in a country - is a relationship.
+          </li>
+          <li>
+            Using <code>1..*</code> multiplicities means that the source entity cannot exists in your data without at least one relationship to the other entity.
+            For instance, having a food producer connected to their items sold in an eshop this way means, that when their last item from the eshop is removed, data about the producer needs to be removed as well.
+            I.e. there cannot be data about any producers, which (even temporarily) do not have any items... might be problematic.
+          </li>
+        </ol>
+      </dd>
+    </dl>
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+<script>
+   anchors.add().add('dt');
+</script>
+</body>
+</html>
