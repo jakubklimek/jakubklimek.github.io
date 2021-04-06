@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en"
+      prefix="foaf: http://xmlns.com/foaf/0.1/
+              contact: http://www.w3.org/2000/10/swap/pim/contact#
+              dc: http://purl.org/dc/terms/
+              v: http://rdf.data-vocabulary.org/#
+              swrc: http://swrc.ontoware.org/ontology#
+              owl: http://www.w3.org/2002/07/owl#
+              org: http://www.w3.org/ns/org#"
+      about="" typeof="foaf:Document">
+ <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <link href="dark.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#333">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#333">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="author" content="Jakub Klímek" />
+  <meta name="summary" content="NPRG036 - Data Formats homework 3 assignment" />
+  <meta name="Description" content="NPRG036 - Data Formats homework 3 assignment" />
+  <meta name="Keywords" content="data formats, xml, xpath, xslt, xml schema, xsd, json, json schema, json-ld" />
+  <title>NPRG036 - Data Formats - Homework 3 assignment</title>
+  <base href="https://jakub.klímek.com/"/>
+ </head>
+ <body class="container text-left">
+  <div class="main">
+    <h1><a href="./nprg036.html">NPRG036 - Data Formats</a> - Homework 3 assignment</h1>
+    <dl>
+      <dt>
+        What
+      </dt>
+      <dd>
+        In this homework, you will create data schemas, data samples and queries using hierarchical data models and query languages including transformations of the hierarchical data to RDF.
+        <ol>
+          <li>
+            Fix the previous homework based on the tutor's notes.
+          </li>
+          <li>
+            For representation of your data in hierarchical data formats, you will first need to create one or more hierarchical diagrams corresponding to the conceptual one, showing how your data will be structured into hierarchies.
+            Each hierarchical diagram will use directed associations, showing the nesting relation, and will have a root class with no incoming associations.
+            It might be necessary to split the data into multiple hierarchies.
+          </li>
+          <li>
+            Example of a conceptual model: <br/><img class="img-fluid" src="./assets/images/nprg036-hw3-model.svg"/>
+          </li>
+          <li>
+            Example of a hierarchical model: <br/><img class="img-fluid" src="./assets/images/nprg036-hw3-model-hierarchy.svg"/>
+          </li>
+          <li>
+            For each hierarchical model create a corresponding XML Schema, enforcing proper datatypes.
+          </li>
+          <li>
+            Represent the data in XML files valid against the created XML Schemas.
+            Utilize the <code>xml:lang</code> attribute to denote the natural language of text values (<a href="https://stackoverflow.com/questions/7502382/how-to-allow-xmllang-attribute-in-xmlschema">HINT</a>)
+          </li>
+          <li>
+            Create a set of non-trivial XPath queries to query the XML data.
+          </li>
+          <li>
+            Create a non-trivial XSLT transformation producing HTML representation of a reasonable subset of your data.
+          </li>
+          <li>
+            Create XSLT transformations producing RDF Turtle representation of your data.
+            This is called a &quot;lifting transformation&quot; - lifting the data to a semantically more precise representation.
+            The resulting RDF data representation should be identical to the one from Homework 2.
+          </li>
+          <li>
+            For each hierarchical model create a corresponding JSON Schema, enforcing proper datatypes.
+          </li>
+          <li>
+            Represent the data in JSON files valid against the created JSON Schemas.
+          </li>
+          <li>
+            Create a JSON-LD context mapping the JSON representations to RDF.
+            The resulting RDF data representation should be identical to the one from Homework 2.
+            This might require changing or amending the JSON representation and the JSON Schemas.
+            Use the <a href="https://json-ld.org/playground/">JSON-LD playground</a> to view the RDF N-Quads representation.
+            Use the <a href="https://jena.apache.org/documentation/io/">Apache Jena</a> <code>riot</code> command-line tool transform the result into RDF Turtle.
+          </li>
+          <li>
+            Create a set of non-trivial <code>jq</code> queries to query the JSON data.
+          </li>
+        </ol>
+      </dd>
+      <dt>
+        Quantitative requirements
+      </dt>
+      <dd>
+        <ol>
+          <li>
+            At least 3 instances of each class.
+            In case of inheritance hierarchies, one of each children is enough.
+          </li>
+          <li>
+            Every attribute used at least once.
+          </li>
+          <li>
+            At least 3 instances of each association.
+          </li>
+          <li>
+            At least 4 non-trivial XPath queries
+          </li>
+          <li>
+            At least 4 non-trivial <code>jq</code> queries
+          </li>
+        </ol>
+      </dd>
+      <dt>
+        How
+      </dt>
+      <dd>
+        <ol>
+          <li>
+            Replace the HW2 file with a fixed one in the HW2 column.
+          </li>
+          <li>
+            To the HW3 column, upload a zipped file named <code>NPRG036-HW3-&lt;groupID&gt;.zip</code>, e.g. <code>NPRG036-HW3-T1G4.zip</code>.
+          </li>
+          <li>
+            Zip file will contain folder <code>3</code>, containing:
+            <ol>
+              <li>
+                Folder <code>model</code> containing:
+                <ol>
+                  <li>
+                    Files <code>hierarchy-1.svg</code>, <code>hierarchy-2.svg</code>, ... with the hierarchical models
+                  </li>
+                </ol>
+              </li>
+              <li>
+                Folder <code>xml</code> containing:
+                <ol>
+                  <li>
+                    Folder <code>schemas</code> containing:
+                    <ol>
+                      <li>
+                        Files <code>schema-1.xml</code>, <code>schema-2.xml</code>, ... with XML Schema schemas
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    Folder <code>data</code> containing:
+                    <ol>
+                      <li>
+                        Files <code>data-1.xml</code>, <code>data-2.xml</code>, ... with data valid against the respective schemas, linked to them via the appropriate attributes
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    Folder <code>queries</code> containing:
+                    <ol>
+                      <li>
+                        Files <code>query-1-1.xpath</code>, <code>query-1-2.xpath</code>, <code>query-2-1.xpath</code>, ... with executable queries, with their meaning explained in XPath comments.
+                        The first number identifies the data file the query should be run against.
+                        The second number identifies the queries on one file.
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    Folder <code>xslt-html</code> containing:
+                    <ol>
+                      <li>
+                        File <code>toHtml.xslt</code>, transforming one of the XML data files to HTML
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    Folder <code>xslt-rdf</code> containing:
+                    <ol>
+                      <li>
+                        Files <code>toRdf-1.xslt</code>, <code>toRdf-2.xslt</code>, ... transforming the individual XML data files to RDF Turtle
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    Folder <code>rdf</code> containing:
+                    <ol>
+                      <li>
+                        RDF Turtle files <code>data-1.ttl</code>, <code>data-2.ttl</code>, ... with data resulting from the <code>toRdf-*</code> XSLT transformations of the XML data files.
+                      </li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                Folder <code>json</code> containing:
+                <ol>
+                  <li>
+                    Folder <code>schemas</code> containing:
+                    <ol>
+                      <li>
+                        Files <code>schema-1.json</code>, <code>schema-2.json</code>, ... with JSON Schema schemas
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    Folder <code>data</code> containing:
+                    <ol>
+                      <li>
+                        JSON-LD files <code>data-1.jsonld</code>, <code>data-2.jsonld</code>, ... with data valid against the respective schemas and interpretable as RDF.
+                        The JSON-LD context should be included in the data files.
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    Folder <code>rdf</code> containing:
+                    <ol>
+                      <li>
+                        RDF Turtle files <code>data-1.ttl</code>, <code>data-2.ttl</code>, ... with data resulting from the JSON-LD mapping of the JSON data files.
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    Folder <code>queries</code> containing:
+                    <ol>
+                      <li>
+                        Files <code>query-1-1.jq</code>, <code>query-1-2.jq</code>, <code>query-2-1.jq</code>, ... with executable queries.
+                        The first number identifies the data file the query should be run against.
+                        The second number identifies the queries on one file.
+                      </li>
+                      <li>
+                        File <code>readme.txt</code> in UTF-8 explaining the meaning of the individual queries.
+                      </li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </dd>
+    </dl>
+    <h2>Frequently Asked Questions (FAQ)</h2>
+    <dl>
+      <dt>What is a trivial query?</dt>
+      <dd>
+        Listing of entities of a certain type, optionally filtered by a certain value.
+      </dd>
+      <dd>
+        Counting of entities of a certain type, optionally filtered by a certain value.
+      </dd>
+    </dl>
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+<script>
+   anchors.add().add('dt');
+</script>
+</body>
+</html>
