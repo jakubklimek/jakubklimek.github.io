@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en"
+      prefix="foaf: http://xmlns.com/foaf/0.1/
+              contact: http://www.w3.org/2000/10/swap/pim/contact#
+              dc: http://purl.org/dc/terms/
+              v: http://rdf.data-vocabulary.org/#
+              swrc: http://swrc.ontoware.org/ontology#
+              owl: http://www.w3.org/2002/07/owl#
+              org: http://www.w3.org/ns/org#"
+      about="" typeof="foaf:Document">
+ <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <link href="dark.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#333">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#333">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="author" content="Jakub Klímek" />
+  <meta name="summary" content="NPRG036 - Data Formats homework 4 assignment" />
+  <meta name="Description" content="NPRG036 - Data Formats homework 4 assignment" />
+  <meta name="Keywords" content="data formats, csv, csvw, CSV on the Web, rdf" />
+  <title>NPRG036 - Data Formats - Homework 4 assignment</title>
+  <base href="https://jakub.klímek.com/"/>
+ </head>
+ <body class="container text-left">
+  <div class="main">
+    <h1><a href="./nprg036.html">NPRG036 - Data Formats</a> - Homework 4 assignment</h1>
+    <dl>
+      <dt>
+        What
+      </dt>
+      <dd>
+        In this homework, you will create data schemas and data samples using the relational data data model and CSV, including transformations of the relational data to RDF.
+        You should use the same data instances as in HW2 and HW3, this time in CSV.
+        <ol>
+          <li>
+            Fix the previous homework based on the tutor's notes.
+          </li>
+          <li>
+            Based on your conceptual model, create a relational model showing how your data will be split into tables, what will be the primary keys and what foreign keys will be there.
+          </li>
+          <li>
+            Create a corresponding CSV on the Web Table group descriptor, including proper data types, languages, and primary and foreign keys.
+          </li>
+          <li>
+            Represent the data in CSV files valid against the created CSV on the Web descriptor.
+          </li>
+          <li>
+            Enhance the CSV on the Web descriptor with virtual columns, and <code>aboutUrl</code>, <code>propertyUrl</code> and <code>valueUrl</code> annotations.
+            The resulting RDF data representation should be identical to the ones from Homeworks 2 and 3.
+            Use the <a href="https://github.com/ruby-rdf/rdf-tabular">rdf-tabular</a> ruby gem to transform the CSV table group to RDF N-Triples.
+            Use the <a href="https://jena.apache.org/documentation/io/">Apache Jena</a> <code>riot</code> command-line tool or the <a href="https://rdf-translator.appspot.com/">RDF translator online tool</a> to transform the result into RDF Turtle.
+          </li>
+        </ol>
+      </dd>
+      <dt>
+        Quantitative requirements
+      </dt>
+      <dd>
+        <ol>
+          <li>
+            At least 3 instances of each class.
+            In case of inheritance hierarchies, one of each children is enough.
+          </li>
+          <li>
+            Every attribute used at least once.
+          </li>
+          <li>
+            At least 3 instances of each association.
+          </li>
+        </ol>
+      </dd>
+      <dt>
+        How
+      </dt>
+      <dd>
+        <ol>
+          <li>
+            Replace the HW3 file with a fixed one in the HW3 column.
+          </li>
+          <li>
+            To the HW4 column, upload a zipped file named <code>NPRG036-HW4-&lt;groupID&gt;.zip</code>, e.g. <code>NPRG036-HW4-T2G1.zip</code>.
+          </li>
+          <li>
+            Zip file will contain folder <code>4</code>, containing:
+            <ol>
+              <li>
+                Folder <code>model</code> containing:
+                <ol>
+                  <li>
+                    File <code>relational.svg</code> with the relational model
+                  </li>
+                </ol>
+              </li>
+              <li>
+                Folder <code>csv</code> containing:
+                <ol>
+                  <li>
+                    File <code>data.csv-metadata.json</code> with CSV on the Web Table Group descriptor.
+                    Optionally, if the descriptor is split into individual table descriptors, files <code>data-1.csv-metadata.json</code>, <code>data-2.csv-metadata.json</code>, ...
+                  </li>
+                  <li>
+                    Files <code>data-1.csv</code>, <code>data-2.csv</code>, ... with data valid against the descriptor, linked from the descriptor
+                  </li>
+                  <li>
+                    Folder <code>rdf</code> containing:
+                    <ol>
+                      <li>
+                        RDF Turtle file <code>data.ttl</code> with data resulting from the transformation of the files to RDF using <code>rdf-tabular</code> and converted to RDF Turtle.
+                      </li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </dd>
+    </dl>
+    <h2>Frequently Asked Questions (FAQ)</h2>
+    <p>Nothing so far</p>
+  </div>
+<script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+<script>
+   anchors.add().add('dt');
+</script>
+</body>
+</html>
