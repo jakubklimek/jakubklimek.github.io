@@ -258,6 +258,25 @@
         Counting of entities of a certain type, optionally filtered by a certain value.
       </dd>
     </dl>
+    <h2>Common errors</h2>
+    <dl>
+      <dt>RDF triples generated from XML using XSLT or by translating JSON-LD do not match those in HW2</dt>
+      <dd>
+        The point of the &quot;lifting transformation&quot; part of the homework is to practice transformation of data from XML to RDF and from JSON to RDF.
+        The resulting triples should, therefore, use the same IRIs, predicates and classes, and the literals should have the same data types and language tags as in HW2.
+      </dd>
+      <dt>Overusing <code>for-each</code> in XSLT instead of using XSL templates</dt>
+      <dd>
+        When writing XSLT, try to utilize the natural flow of the XSLT processor, which traverses the XML document tree and applies templates.
+        Writing XSLT as one big template full of <code>xsl:for-each</code> cycles instead is a bad practice.
+      </dd>
+      <dt><code>xsd:bool</code>, <code>xsd:int</code>, <code>xsd:float</code> datatypes</dt>
+      <dd>
+        <code>xsd:bool</code> does not exist. It is <code>xsd:boolean</code>.
+        <code>xsd:int</code> exists, but it is a more specific data type than <code>xsd:integer</code>, which is the one used everywhere on the web.
+        <code>xsd:float</code> exists, but the one usually used is <code>xsd:double</code>.
+      </dd>
+    </dl>
   </div>
 <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
 <script>

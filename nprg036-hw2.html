@@ -201,6 +201,47 @@
         Counting of entities of a certain type, optionally filtered by a certain value.
       </dd>
     </dl>
+    <h2>Common errors</h2>
+    <dl>
+      <dt>Using classes in place of predicates</dt>
+      <dd>
+        Classes cannot be, in general, used as RDF predicates.
+        This means that in the covered UML class diagram, you should not use classes as associaton names.
+        Typically, this is an error, which can be easily spotted.
+        Classes typically start with an upper-case letter after prefix, e.g. <code>foaf:Person</code>.
+      </dd>
+      <dt>Using predicates in place of classes</dt>
+      <dd>
+        Predicates cannot be, in general, used as a class.
+        This means that in the covered UML class diagram, you should not use predicates as UML class names.
+        Typically, this is an error, which can be easily spotted.
+        Predicates typically start with a lower-case letter after prefix, e.g. <code>foaf:name</code>.
+      </dd>
+      <dt>Missing language tags or data types in RDF</dt>
+      <dd>
+        Texts in literals, which are in a natural language, needs to have this language identified using a language tag, e.g. <code>@en</code> or <code>@cs</code>.
+        If a literal does not have a language tag, it needs to have a data type, typically from the <code>xsd:</code> namespace, e.g. <code>xsd:dateTime</code>.
+      </dd>
+      <dt>Wrong date syntax in LPG</dt>
+      <dd>
+        Also in LPG the syntax for dates is the same as in <code>xsd:date</code>, i.e. <code>YYYY-MM-DD</code>.
+      </dd>
+      <dt>Mistakes in RDF Turtle prefixes</dt>
+      <dd>
+        When creating a RDFS vocabulary, you define <code>rdfs:Class</code> and <code>rdf:Property</code> instances.
+      </dd>
+      <dt>Multiple <code>rdfs:domain</code> or <code>rdfs:range</code></dt>
+      <dd>
+        When you say that your property (instance of <code>rdf:Property</code>) has multiple domains or ranges, you are saying that an RDF resource, which will be in the subject (domain) or object (range) position of a triple with this predicate, are instances of all the classes specified as <code>rdfs:domain</code> or <code>rdfs:range</code>.
+        This is often wrong, as it is often meant as a way of saying that a domain or range includes multiple classes, which is not what it says.
+      </dd>
+      <dt>Using schema.org datatypes</dt>
+      <dd>
+        Using Schema.org datatypes such as <code>schema:Boolean</code> is not recommended.
+        It means that in RDF, all literals are strings, and they are then interpreted as booleans by a schema.org aware parser, which is often not desirable.
+        RDF has built-in support for <code>xsd:</code> based datatypes, which should be used primarily.
+      </dd>
+    </dl>
   </div>
 <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
 <script>
