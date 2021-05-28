@@ -118,13 +118,12 @@
                   <li>
                     Files <code>data-1.csv</code>, <code>data-2.csv</code>, ... with data valid against the descriptor, linked from the descriptor
                   </li>
+                </ol>
+              <li>
+                Folder <code>rdf</code> containing:
+                <ol>
                   <li>
-                    Folder <code>rdf</code> containing:
-                    <ol>
-                      <li>
-                        RDF Turtle file <code>data.ttl</code> with data resulting from the transformation of the files to RDF using <code>rdf-tabular</code> and converted to RDF Turtle.
-                      </li>
-                    </ol>
+                    RDF Turtle file <code>data.ttl</code> with data resulting from the transformation of the files to RDF using <code>rdf-tabular</code> and converted to RDF Turtle.
                   </li>
                 </ol>
               </li>
@@ -142,6 +141,25 @@
         This is covered in NDBI025 - Database systems.
         The translation alogirthm is straightforward, and deals especially with repeated attributes and associations based on their cardinalities.
         For those who did not have NDBI025 yet, or need to refresh this knowledge, the algorithm is shown from <a href="https://is.cuni.cz/studium/predmety/index.php?do=download&did=66550&kod=NDBI025">slide 25 in the NDBI025 lecture</a>.
+      </dd>
+    </dl>
+    <h2>Common errors</h2>
+    <dl>
+      <dt>
+        Mixing prefixed and relative IRIs in CSVW descriptor
+      </dt>
+      <dd>
+        In this example:
+        <pre><code class="language-turtle">&lt;http://sis.cuni.cz/S006&gt; a &lt;ex:Room&gt; ;
+          &lt;ex:roomCode&gt; &quot;SU2&quot; ;
+          &lt;oo:capacity&gt; 30 ;
+          &lt;vivo:building&gt; &quot;Malá strana&quot; .</code></pre>
+        besides <code>&quot;Malá strana&quot;</code> missing a language tag, the <code>&lt;ex:roomCode&gt;</code> and similar IRIs are not prefixed IRIs.
+        They are asolute IRIs with <code>ex:</code> scheme instead of <code>http:</code> scheme.
+        A prefixed IRI in RDF Turtle would not be delimited by <code>&lt;&gt;</code>.
+        This is the result of bad mapping in the CSVW descriptor.
+        Note that the <a href="https://www.w3.org/TR/tabular-metadata/#names-of-common-properties">CSVW specification</a> states, that the CSVW JSON-LD context contains a predefined set of prefixes and it forbids defining additional ones.
+        This means that for some common prefixes, the usage of prefixed IRIs in the CSVW descriptor is possible, but otherwise absolute IRI representation needs to be used.
       </dd>
     </dl>
   </div>
