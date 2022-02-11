@@ -51,7 +51,7 @@
         In this homework, you will create data samples and queries using graph data models and query languages.
         <ol>
           <li>
-            Fix the conceputal model from the previous homework based on the tutor's notes.
+            Fix the conceptual model from the previous homework based on the tutor's notes.
           </li>
           <li>
             For representation of data in RDF, you will need to cover the conceptual model with classes and properties either from <a href="https://lov.linkeddata.es/dataset/lov/">existing vocabularies</a> where appropriate, or by defining new ones using <a href="https://docs.google.com/presentation/d/1SwDgvaTJvUBY_5_EOG3V_ajJsIZadzFNNnJgYqa1Qcw/edit#slide=id.gba51ba2639_1_671">RDF Schema</a>.
@@ -221,6 +221,11 @@
       <dd>
         Texts in literals, which are in a natural language, needs to have this language identified using a language tag, e.g. <code>@en</code> or <code>@cs</code>.
         If a literal does not have a language tag, it needs to have a data type, typically from the <code>xsd:</code> namespace, e.g. <code>xsd:dateTime</code>.
+      </dd>
+      <dt>Mistaking prefixed and absolute IRIs with weird schemes</dt>
+      <dd>
+        In RDF Turtle, <code>my:predicate</code> is a prefixed IRI, <code>&lt;my:predicate&gt;</code> is, however, an absolute IRI with <code>my:</code> scheme instead of <code>http:</code> or <code>https:</code>.
+        This is typically a mistake.
       </dd>
       <dt>Wrong date syntax in LPG</dt>
       <dd>
