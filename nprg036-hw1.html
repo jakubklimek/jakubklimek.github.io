@@ -54,7 +54,10 @@
         Quantitative requirements:
         <ol>
           <li>5 to 10 classes</li>
-          <li>Each class 3 to 5 attributes, some with multiplicity <code>0..*</code></li>
+          <li>
+            Each class 3 to 5 attributes, some with multiplicity <code>0..*</code>.
+            Attributes inherited from a parent class in an inheritacne hierarchy count as well, i.e. it is ok not to create attributes for a child class if parent class already has 3 to 5.
+          </li>
           <li>At least 4 associations. Include association end multiplicities <code>0..*</code>, <code>0..1</code>, <code>1..1</code></li>
         </ol>
       </dd>
@@ -62,12 +65,12 @@
         How
       </dt>
       <dd>
-        Use a tool that allows you to draw UML Class Diagrams and export them as SVG.
+        Use a tool that allows you to draw UML Class Diagrams and export them, ideally as SVG, PNG if SVG not possible.
         For example, <a href="https://www.diagrams.net/">diagrams.net</a>.
         The homework is to be turned in via the study system by a group leader.
         <ol>
           <li>A zipped file named <code>NPRG036-&lt;groupID&gt;.zip</code>, e.g. <code>NPRG036-T1G4.zip</code></li>
-          <li>Folder <code>1</code> containing <code>domain.svg</code> with the image of the conceptual model and <code>domain.txt</code> in <code>UTF-8</code> containing the textual description of the domain model.</li>
+          <li>Folder <code>1</code> containing <code>domain.svg</code> (or <code>.png</code>) with the image of the conceptual model and <code>domain.txt</code> in <code>UTF-8</code> containing the textual description of the domain model.</li>
         </ol>
       </dd>
       <dt id="hw1-common-mistakes">
