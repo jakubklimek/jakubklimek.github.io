@@ -54,7 +54,10 @@
         Quantitative requirements:
         <ol>
           <li>5 to 10 classes</li>
-          <li>Each class 3 to 5 attributes, some with multiplicity <code>0..*</code></li>
+          <li>
+            Each class 3 to 5 attributes, some with multiplicity <code>0..*</code>.
+            Attributes inherited from a parent class in an inheritacne hierarchy count as well, i.e. it is ok not to create attributes for a child class if parent class already has 3 to 5.
+          </li>
           <li>At least 4 associations. Include association end multiplicities <code>0..*</code>, <code>0..1</code>, <code>1..1</code></li>
         </ol>
       </dd>
