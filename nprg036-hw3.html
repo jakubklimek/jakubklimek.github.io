@@ -81,6 +81,7 @@
             Create XSLT transformations producing RDF Turtle representation of your data.
             This is called a &quot;lifting transformation&quot; - lifting the data to a semantically more precise representation.
             The resulting RDF data representation should be identical to the one from Homework 2.
+            Validate the resulting file.
           </li>
           <li>
             For each hierarchical model create a corresponding JSON Schema, enforcing proper datatypes.
@@ -260,6 +261,10 @@
     </dl>
     <h2>Common errors</h2>
     <dl>
+      <dt>Having <code>0..1</code> or <code>0..*</code> multiplicities at the parent class in the hierarchical model</dt>
+      <dd>This means that the instance of the child class does not have to have a relation to the parent class. However, if in your schema you only allow for instances of the child class to appear nested in instances of the parent class, this corresponds to other multiplicities - <code>1..1</code> or <code>1..*</code>. It is best to design the hierarchies so that they do not include the <code>0..1</code> or <code>0..*</code> multiplicities with the parent class. Instead, split those independent entities into separate hierarchies. You can then have those as separate files, or separate subtrees with a common root in one file.</dd>
+      <dt>Unidentified entities</dt>
+      <dd>In XML and JSON, entities should also have globally unique identifiers. You have those from RDF, so reuse them also in XML and JSON. You can use those to avoid redundancies (reference using the IRIs instead), and you will need those identifiers to be able to correctly map XML and JSON back to RDF.</dd>
       <dt>RDF triples generated from XML using XSLT or by translating JSON-LD do not match those in HW2</dt>
       <dd>
         The point of the &quot;lifting transformation&quot; part of the homework is to practice transformation of data from XML to RDF and from JSON to RDF.
