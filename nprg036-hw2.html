@@ -77,7 +77,7 @@
           </li>
           <li>
             For representation of data in LPG, create a visualization of a data sample like the one in the <a href="https://docs.google.com/presentation/d/1BoPwtIHgPVlQlgx5muGRzPw4rY-iymzd_YhUgu_1yDs/edit#slide=id.gbebfac418a_0_320">lecture</a>.
-            Try to utilize the possibility of edges having properties.
+            Use edge properties.
             Each node and relationship will have a label representing its type.
           </li>
           <li>
@@ -221,8 +221,8 @@
       </dd>
       <dt>Missing language tags or data types in RDF</dt>
       <dd>
-        Texts in literals, which are in a natural language, needs to have this language identified using a language tag, e.g. <code>@en</code> or <code>@cs</code>.
-        If a literal does not have a language tag, it needs to have a data type, typically from the <code>xsd:</code> namespace, e.g. <code>xsd:dateTime</code>.
+        Texts in literals, which are in a natural language, need to have this language identified using a language tag, e.g. <code>@en</code> or <code>@cs</code>.
+        If a literal does not have a language tag, it needs to have a data type, typically from the <code>xsd:</code> namespace, e.g. <code>xsd:dateTime</code>, see <a href="https://www.w3.org/TR/xmlschema11-2/#built-in-datatypes">XML Schema 1.1 Data types</a>.
       </dd>
       <dt>Mistaking prefixed and absolute IRIs with weird schemes</dt>
       <dd>
@@ -247,6 +247,12 @@
         Using Schema.org datatypes such as <code>schema:Boolean</code> is not recommended.
         It means that in RDF, all literals are strings, and they are then interpreted as booleans by a schema.org aware parser, which is often not desirable.
         RDF has built-in support for <code>xsd:</code> based datatypes, which should be used primarily.
+      </dd>
+      <dt>Not including human readable labels for instances or user-defined classes and predicates</dt>
+      <dd>
+        Every RDF resource should have a human readable label, so that it can be actually shown to end-users in potential applications.
+        For instances, those are typically <code>dcterms:title</code>, <code>foaf:name</code> or <code>skos:prefLabel</code>.
+        For classes and predicates, this is <code>rdfs:label</code>.
       </dd>
     </dl>
   </div>
