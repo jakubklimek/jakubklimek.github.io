@@ -261,6 +261,12 @@
     </dl>
     <h2>Common errors</h2>
     <dl>
+      <dt>Conceptual model not fully covered by hierarchies</dt>
+      <dd>
+        The goal is to cover the entire conceptual model in the hierarchical data formats.
+        This may include splitting the data into multiple hierarchical files (both in JSON and XML).
+        For example, if you have a relation in your conceptual model with multiplicity <code>0..*</code> on both ends, you will need two hierarchies to cover that part of the model as instances of both classes can exist independently of each other.
+      </dd>
       <dt>Having <code>0..1</code> or <code>0..*</code> multiplicities at the parent class in the hierarchical model</dt>
       <dd>This means that the instance of the child class does not have to have a relation to the parent class. However, if in your schema you only allow for instances of the child class to appear nested in instances of the parent class, this corresponds to other multiplicities - <code>1..1</code> or <code>1..*</code>. It is best to design the hierarchies so that they do not include the <code>0..1</code> or <code>0..*</code> multiplicities with the parent class. Instead, split those independent entities into separate hierarchies. You can then have those as separate files, or separate subtrees with a common root in one file.</dd>
       <dt>Invalid JSON Schema, validator says OK</dt>
