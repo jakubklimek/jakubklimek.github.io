@@ -254,6 +254,22 @@
         For instances, those are typically <code>dcterms:title</code>, <code>foaf:name</code> or <code>skos:prefLabel</code>.
         For classes and predicates, this is <code>rdfs:label</code>.
       </dd>
+      <dt>
+        Using <code>xsd:string</code> for predicates with values being human readable text
+      </dt>
+      <dd>
+        Human readable text, represented as a literal with a language tag, is of a datatype <code>rdf:langString</code>
+      </dd>
+      <dt>
+        Using <code>xsd:float</code> for floating point numbers
+      </dt>
+      <dd>
+        In RDF, <code>xsd:double</code> is used rather than <code>xsd:float</code>. This is supported by the existing RDF Turtle and SPARQL syntax shortcuts for <code>xsd:double</code>.
+      </dd>
+      <dt>Not using LPG relation properties</dt>
+      <dd>
+        One of the major differences of LPG from RDF are relation properties. The assignment asks for their usage in LPG and Cypher. If you do not have any part of the conceptual model suitable to be represented as relation properties, you can add something.
+      </dd>
     </dl>
   </div>
 <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
