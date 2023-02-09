@@ -102,7 +102,7 @@
         <p>
           The easiest way to go through most of the examples unless stated otherwise is to use <a href="https://www.oracle.com/java/technologies/downloads/#java8">JDK 8</a>.
           Newer JDKs are missing some WS related libraries, which need to be supplied extra, and there are common version issues.
-          Examples tested in <a href="https://www.eclipse.org/downloads/packages/release/2021-12/r#:~:text=eclipse%20ide%20for%20enterprise%20java%20and%20web%20developers">Eclipse IDE 2021-12 <strong>for Enterprise Java and Web Developers</strong></a>.
+          Examples tested in <a href="https://www.eclipse.org/downloads/packages/#:~:text=eclipse%20ide%20for%20enterprise%20java%20and%20web%20developers">Eclipse IDE 2022-12 <strong>for Enterprise Java and Web Developers</strong></a>.
           Bring your own laptop with required SW installed, if possible.
         </p>
         <ol>
@@ -118,17 +118,11 @@
             <li><strong>2023-02-21</strong>: <a href="https://docs.google.com/presentation/d/1zLtEpgyujnXqocetq1hGl-WFUNTlIfhiTGVB66lzRiE" title="SOAP 1">SOAP 1</a>. Prerequisites:
             <ul>
               <li><a href="http://www.eclipse.org/downloads/packages/" title="Eclipse">Eclipse IDE for <strong>Enterprise Java and Web Developers</strong></a></li>
-              <li><a href="https://www.soapui.org/" title="SoapUI">SoapUI</a></li>
-              <li>One of:
+              <li><a href="https://www.soapui.org/tools/soapui/" title="SoapUI">SoapUI Open Source</a></li>
+              <li>Tested on these version combinations:
                 <ul>
-                  <li><a href="https://www.oracle.com/java/technologies/downloads/#java8" title="Java">Java JDK 8, at least 1.8.0_u311</a></li>
-                  <li><a href="https://jdk.java.net/15/">OpenJDK 15</a> (not newer) and <a href="https://stackoverflow.com/questions/48204141/replacements-for-deprecated-jpms-modules-with-java-ee-apis/48204154#48204154">Maven dependencies for JAX-WS</a></li>
-                  <li><a href="https://jdk.java.net/15/">OpenJDK 15</a> (not newer)  (e.g. ) and one of:
-                    <ul>
-                      <li><a href="https://repo1.maven.org/maven2/com/sun/xml/ws/jaxws-ri/2.3.5/jaxws-ri-2.3.5.zip">JAX-WS RI 2.3.5</a> for <code>javax</code> packages</li>
-                      <li><a href="https://repo1.maven.org/maven2/com/sun/xml/ws/jaxws-ri/3.0.2/jaxws-ri-3.0.2.zip">JAX-WS RI 3.0.2</a> for <code>jakarta</code> packages</li>
-                    </ul>
-                  </li>
+                  <li><a href="https://www.oracle.com/java/technologies/downloads/#java8" title="Java">Java JDK 8, at least 1.8.0_u311</a> (<code>javax</code> dependencies included)</li>
+                  <li><a href="https://jdk.java.net/19/">OpenJDK 19.0.2</a> and <a href="https://repo1.maven.org/maven2/com/sun/xml/ws/jaxws-ri/4.0.1/jaxws-ri-4.0.1.zip">JAX-WS RI 4.0.1</a> for <code>jakarta</code> packages</li></li>
                 </ul>
               </li>
               <li>Git repo folder for homework: <code>02-soap</code></li>
@@ -143,14 +137,19 @@
             <li>
               <strong>2023-03-07</strong>: <a href="https://docs.google.com/presentation/d/1u2jZweGegZ3oDuNdCOyvhdiN5Zl-A4dMw2ZaEbroPmQ" title="WSDL+SOAP, SAAJ">WSDL+SOAP, SAAJ</a>
               <ul>
-                <li><a href="https://tomcat.apache.org/download-90.cgi" title="Apache Tomcat 9">Apache Tomcat 9</a></li>
+                <li>Apache Tomcat
+                  <ul>
+                    <li>For Java 8: <a href="https://tomcat.apache.org/download-90.cgi" title="Apache Tomcat 9">Apache Tomcat 9</a></li>
+                    <li>For Java 19: <a href="https://tomcat.apache.org/download-10.cgi" title="Apache Tomcat 10.1">Apache Tomcat 10.1</a></li>    
+                  </ul>
+                </li>
                 <li>Git repo folder for homework: <code>04-intermediary</code></li>
               </ul>
             </li>
             <li><strong>2023-03-14</strong>: <a href="https://docs.google.com/presentation/d/1I5hL3dRUJ8Ks3wTPN200l32sTkfvoYpn3LpjxV3Z86Y" title="CXF, WS-*">CXF, WS-*</a>. Prerequisites:
               <ul>
                 <li><a href="https://tomcat.apache.org/download-90.cgi" title="Apache Tomcat 9">Apache Tomcat 9</a></li>
-                <li><a href="http://cxf.apache.org/download.html" title="Apache CXF 3.5.0">Apache CXF 3.5.0</a></li>
+                <li><a href="http://cxf.apache.org/download.html" title="Apache CXF 3.5.5">Apache CXF 3.5.5</a></li>
                 <li>Git repo folder for homework: <code>05-cxf</code></li>
               </ul>
             </li>
@@ -171,9 +170,10 @@
             </li>
             <li><strong>2023-04-04</strong>: <a href="https://docs.google.com/presentation/d/1d1IBddgY8LRS5oXlocLBaXfbBs2lv76bXwZJvUabiP8" title="REST">REST</a>. Prerequisites:
               <ul>
-                <li><a href="https://jdk.java.net/17/">JDK 17</a></li>
-                <li><a href="https://eclipse-ee4j.github.io/jersey/download.html" title="Eclipse Jersey">Jersey 3.x bundle</a></li>
-                <li><a href="https://tomcat.apache.org/download-10.cgi" title="Apache Tomcat 10">Apache Tomcat 10</a></li>
+                <li><a href="https://jdk.java.net/19/">JDK 19</a></li>
+                <li><a href="https://eclipse-ee4j.github.io/jersey/download.html" title="Eclipse Jersey">Jersey 3.1.x bundle</a></li>
+                <li><a href="https://eclipse-ee4j.github.io/jaxb-ri/" title="JAX-B RI">JAX-B RI 4.0.2</a></li>
+                <li><a href="https://tomcat.apache.org/download-10.cgi" title="Apache Tomcat 10.1">Apache Tomcat 10.1</a></li>
                 <li>Git repo folder for homework: <code>08-rest</code></li>
               </ul>
             </li>
