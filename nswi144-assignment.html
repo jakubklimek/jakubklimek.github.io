@@ -33,8 +33,8 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="author" content="Jakub Klímek" />
   <meta name="summary" content="NSWI144 Data on the Web course information" />
-  <meta name="Description" content="Information for students of the NSWI144 course on data integration and quality" />
-  <meta name="Keywords" content="linked data, integration, quality, nswi144" />
+  <meta name="Description" content="Information for students of the NSWI144 course on data on the web" />
+  <meta name="Keywords" content="linked data, web, data on the web, rdf, sparql, shacl, silk, nswi144" />
   <title>NSWI144 - Data on the Web semestral assignment</title>
   <base href="https://jakub.klímek.com/"/>
  </head>
@@ -50,132 +50,264 @@
        <li>Link (internally, externally)</li>
        <li>Store</li>
        <li>Query & Use – in a demo application</li>
+       <li>Validate the data</li>
     </ol>
     <h2>In detail</h2>
       <h3>Part 1 - identificaton and analysis of data sources</h3>
-      <h4>What</h4>
-      <ol>
-         <li>At least 3 data sources regarding a related topic - they have to be linkable and sufficiently different</li>
-         <li>e.g. 3 tables from 1 database = 1 data source</li>
-         <li>e.g. 3 sheets in 1 excel file = 1 data source</li>
-         <li>3 HTML pages from one website = 1 data source</li>
-         <li>1 HTML page, 1 CSV file and 1 XML file, from different websites = 3 data sources</li>
-         <li>They should not be triplified (transformed to RDF) yet</li>
-         <li>UML-style class diagram with an overview of entities and their properties, in which datasets they are located, and how they can be linked</li>
-         <li>You can search the <a href="https://data.gov.cz" target="_blank">National Open Data Catalog</a>, in <a href="https://data.gov.uk" target="_blank">British open data</a> or simply on Google.</li>
-      </ol>
-      <h4>How</h4>
-      <ol>
-         <li>Folder <code>source</code> containing:</li>
-         <li><ol>
-            <li>TXT file <code>description.txt</code> (UTF-8 encoded) with description of the selected data - for each data source: Format (XML/HTML/CSV/...), link to the datasource</li>
-            <li>PNG file <code>diagram.png</code> (UML class diagrams style) showing concepts and relations in the chosen datasets</li>
-         </ol></li>
-      </ol>
+         <h4>What</h4>
+            <ol>
+               <li>At least 3 data sources regarding a related topic - they have to be linkable and sufficiently different
+                  <ul>
+                     <li>e.g. 3 tables from 1 database = 1 data source</li>
+                     <li>e.g. 3 sheets in 1 excel file = 1 data source</li>
+                     <li>3 HTML pages from one website = 1 data source</li>
+                     <li>1 HTML page, 1 CSV file and 1 XML file, from different websites = 3 data sources</li>
+                     <li>They should not be triplified (transformed to RDF) yet, or at least do not look at how it is done</li>      
+                  </ul>
+               </li>
+               <li>UML class diagram-style diagram
+                  <ul>
+                     <li>showing entities, relations and attributes in individual datasets and indication of how the datasets can be linked</li>
+                     <li>You can search the <a href="https://data.gov.cz" target="_blank">National Open Data Catalog</a>, in <a href="https://data.gov.uk" target="_blank">British open data</a>, in <a href="https://data.gov" target="_blank">American open data</a>, the <a href="https://data.europa.eu">Official portal for European data</a>, or simply on Google or <a href="https://datasetsearch.research.google.com/">Google Dataset Search</a>.</li>
+                  </ul>
+               </li>
+            </ol>
+         <h4>How</h4>
+            <ol>
+               <li>Folder <code>source</code> containing:</li>
+               <li>
+                  <ol>
+                     <li>TXT file <code>description.txt</code> (UTF-8 encoded) with description of the selected data - for each data source: Format (XML/HTML/CSV/...), link to the datasource</li>
+                     <li>
+                        SVG file <code>diagram.svg</code> (UML class diagrams style) showing concepts and relations in the chosen datasets.
+                        You can use any decent UML diagramming tool, e.g. <a href="https://diagrams.net">diagrams.net</a>, <a href="https://lucidchart.com">the commercial Lucidchart</a>, etc.
+                     </li>
+                  </ol>
+               </li>
+            </ol>
+         <h4>Common mistakes</h4>
+            <ol>
+               <li>
+                  Attributes should be primitive values (strings, dates, booleans) of the real world entity represented by the class.
+                  When they are more complex, they typically represent another real world entity and its primitive attributes.
+               </li>
+               <li>
+                  Common mistake was including attribute of another real world entity, which should be solved by introducing a new class and a relationship to it.
+                  Typically something, which exists independently of the current entity, and has a label. For instance, "country" attribute of a "customer".
+                  Country exists independently of the customer.
+                  Country name is an attribute of the "country" real world entity, not of the "customer".
+                  "Customer" lives in a country - is a relationship.
+               </li>
+               <li>
+                  The diagrams are supposed to show real world entities, their relations and attributes.
+                  They are not supposed to show the columns of a CSV table.
+                  That is an artefact of the technical representation, not the real world.
+               </li>
+               <li>
+                  The diagrams should show which attributes or which entities will be used for linking later.
+               </li>
+            </ol>
       <h3>Part 2 - transformation of source data into RDF</h3>
-      <h4>What</h4>
-      <ol>
-         <li>Triplification script (TARQL, XSLT, ...) which can be run on the downloaded data - 1 for each data source</li>
-         <li>Resulting RDF data has correct format</li>
-         <li><ul>
-            <li>it represents the source data</li>
-            <li>it uses correctly defined IRI patterns</li>
-            <li>it uses correct data types and language tags</li>
-            <li>entities from source data are correctly separated and interlinked</li>
-            <li>adheres to the "Link not Label" pattern</li>
-         </ul></li>
-         <li>Transformation script use a language appropriate for the source data: XSLT (XML), XQuery (XML), R2RML (RDB), Tarql (CSV, Excel), Java+Jsoup (HTML), JSON-LD context for JSON</li>
-         <li>In the first phase, correct vocabularies do not have to be used.</li>
-         <li>For the second phase
-            <ul>
-               <li>Feedback from the first phase incorporated</li>
-               <li>Appropriate vocabularies have to be used (SKOS for codelists, RDF Data Cube for statistical data, etc.)</li>
-               <li>The resulting datasets and linksets are properly described with metadata according to the <a href="https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic/solution/dcat-application-profile-data-portals-europe/release/201-0">DCAT-AP v2.0.1</a> standard, using required and recommended properties and codelists.</li>
-            </ul>
-         </li>
-      </ol>
-      <h4>How</h4>
-      <ol>
-         <li>Folder <code>source</code> containing:</li>
-         <li><ul>
-            <li>TXT file <code>description.txt</code> additionally containing tools used for triplification of the datasets</li>
-         </ul></li>
-         <li>Folder <code>download</code> containing subfolders for each dataset. Each dataset subfolder contains:</li>
-         <li><ul>
-            <li>Subfolder <code>input</code> containing the downloaded original data</li>
-            <li>Subfolder <code>triplifier</code> containing the triplification scripts</li>
-            <li>Subfolder <code>output</code> containing the resulting RDF data (TIP: File extensions: Turtle: <code>.ttl</code>, N-Triples: <code>.nt</code>, RDF/XML: <code>.rdf</code>)</li>            
-         </ul></li>
-         <li>For phase 2, subfolder <code>catalog</code> containing a catalog with records for each output dataset according to <a href="https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic/solution/dcat-application-profile-data-portals-europe/release/201-0">DCAT-AP v2.0.1</a> and VoID in Turtle syntax</li>
-      </ol>
+         <h4>What</h4>
+            <ol>
+               <li>
+                  Manually created RDF data samples of your dataset.
+                  <ul>
+                     <li>showing how your datasets will look like in RDF Turtle</li>
+                     <li>at least two data instances from each class (entity type) in each dataset</li>
+                     <li>define and adhere to IRI patterns</li>
+                  </ul>
+               </li>
+               <li>
+                  Triplification script (TARQL, XSLT, ...) which can be run on the downloaded data - 1 for each data source
+               </li>
+               <li>
+                  Resulting RDF data has correct format
+                  <ul>
+                     <li>it represents the source data</li>
+                     <li>it uses correctly defined IRI patterns</li>
+                     <li>it uses correct data types and language tags</li>
+                     <li>entities from source data are correctly separated and interlinked</li>
+                  </ul>
+               </li>
+               <li>
+                  Transformation script use a language appropriate for the source data: XSLT (XML), XQuery (XML), R2RML (RDB), Tarql (CSV, Excel), Java+Jsoup (HTML), JSON-LD context for JSON, etc.
+                  Avoid coding transformations using a general-purpose programming language if the transformation can be done using a standard language.
+               </li>
+               <li>
+                  In the first phase, correct vocabularies do not have to be used.
+               </li>
+               <li>For the second phase
+                  <ul>
+                     <li>Feedback from the first phase incorporated</li>
+                     <li>adheres to the "Link not Label" pattern</li>
+                     <li>Appropriate vocabularies have to be used (SKOS for codelists, RDF Data Cube for statistical data, etc.)</li>
+                     <li>The resulting datasets and linksets are properly described with metadata according to the <a href="https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic/solution/dcat-application-profile-data-portals-europe/release/211">DCAT-AP v2.1.1</a> standard, using required and recommended properties and codelists.</li>
+                  </ul>
+               </li>
+            </ol>
+         <h4>How</h4>
+            <ol>
+               <li>Folder <code>source</code> containing:
+                  <ul>
+                     <li>TXT file <code>description.txt</code> additionally containing tools used for triplification of the datasets</li>
+                     <li>Subfolder <code>download</code> containing the downloaded original data (possibly shortened)</li>
+                  </ul>
+               </li>
+               <li>
+                  Folder <code>triplification</code> containing subfolders for each dataset.
+                  Each dataset subfolder contains:
+                  <ul>
+                     <li>Subfolder <code>samples</code> containing the manually created data samples</li>
+                     <li>Subfolder <code>triplifier</code> containing the triplification scripts</li>
+                     <li>Subfolder <code>output</code> containing the resulting RDF data (TIP: File extensions: Turtle: <code>.ttl</code>, N-Triples: <code>.nt</code>, RDF/XML: <code>.rdf</code>)</li>            
+                  </ul>
+               </li>
+               <li>For phase 2, subfolder <code>catalog</code> containing a catalog with records for each output dataset according to <a href="https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic/solution/dcat-application-profile-data-portals-europe/release/211">DCAT-AP v2.1.1</a> and VoID in Turtle syntax</li>
+            </ol>
+         <h4>Common mistakes</h4>
+            <dl>
+               <dt>Using classes in place of predicates</dt>
+               <dd>
+                  Classes cannot be, in general, used as RDF predicates.
+                  This means that in the covered UML class diagram, you should not use classes as associaton names.
+                  Typically, this is an error, which can be easily spotted.
+                  Classes typically start with an upper-case letter after prefix, e.g. <code>foaf:Person</code>.
+               </dd>
+               <dt>Using predicates in place of classes </dt>
+               <dd>
+                  Predicates cannot be, in general, used as a class.
+                  This means that in the covered UML class diagram, you should not use predicates as UML class names.
+                  Typically, this is an error, which can be easily spotted.
+                  Predicates typically start with a lower-case letter after prefix, e.g. <code>foaf:name</code>.
+               </dd>
+               <dt>
+                  Missing language tags or data types in RDF </dt><dd>Texts in literals, which are in a natural language, need to have this language identified using a language tag, e.g. <code>@en</code> or <code>@cs</code>.
+                  If a literal does not have a language tag, it needs to have a data type, typically from the <code>xsd:</code> namespace, e.g. <code>xsd:dateTime</code>, see <a href="https://www.w3.org/TR/xmlschema11-2/#built-in-datatypes">XML Schema 1.1 Data types</a>.</dd><dt>Using non-standard XSD types for numbers </dt><dd>RDF has some expected XSD datatypes for numbers. It is <code>xsd:integer</code> for integers, <code>xsd:double</code> for floating point numbers and <code>xsd:decimal</code> for decimal numbers. Typical mistaktes include <code>xsd:float</code> and <code>xsd:int</code>.</dd><dt>Mistaking prefixed and absolute IRIs with weird schemes </dt><dd>In RDF Turtle, <code>my:predicate</code> is a prefixed IRI, <code>&lt;my:predicate&gt;</code> is, however, an absolute IRI with <code>my:</code> scheme instead of <code>http:</code> or <code>https:</code>.
+                  This is typically a mistake.
+               </dd>
+               <dt>Using schema.org datatypes</dt>
+               <dd>
+                  Using Schema.org datatypes such as <code>schema:Boolean</code> is not recommended.
+                  It means that in RDF, all literals are strings, and they are then interpreted as booleans by a schema.org aware parser, which is often not desirable.
+                  RDF has built-in support for <code>xsd:</code> based datatypes, which should be used primarily.
+               </dd>
+               <dt>Telephone numbers and e-mails </dt>
+               <dd>
+                  Telephone numbers in RDF should be represented as resources identified by IRIs <code>&lt;tel:+420123456789&gt;</code> as well as e-mail addresses <code>&lt;mailto:aaa@bb.cz&gt;</code>.
+               </dd>
+            </dl>
       <h3>Part 3 - Link Discovery (Silk)</h3>
-      <h4>What</h4>
-      <ol>
-         <li>Use Silk to discover links among your datasets</li>
-         <li>Use Silk to discover links between your datasets and foreign datasets already published on the Web. You can find those for instance in the <a href="https://lod-cloud.net/" target="_blank">LOD cloud</a>, in <a href="https://old.datahub.io/" target="_blank">old DataHubu</a>, in <a href="https://linked.opendata.cz/" target="_blank">linked.opendata.cz</a>, in <a href="https://wiki.dbpedia.org/" target="_blank">DBpedia</a>, in the <a href="https://data.gov.cz" target="_blank">National Open Data Catalog</a>, on the <a href="https://publications.europa.eu/en/web/eu-vocabularies/about" target="_blank">EU Vocabularies</a> web, etc.</li>
-         <li>The resulting links will be split into linksets, properly described by VoID metadata</li>
-      </ol>
-      <h4>How</h4>
-      <ol>
-         <li>Folder <code>linking</code> containing:</li>
-         <li><ol>
-            <li>Subfolder <code>internal</code> containing:</li>
-            <li><ol>
-               <li>Subfolder for each linking task between your datasets, named after the linked datasets, and in it:</li>
-               <li><ol>
-                  <li>SILK-LSL script or export of the linking task from Silk Workbench</li>
-                  <li>The resulting linkset in N-Triples</li>
-                  <li>The VoID metadata file</li>
-               </ol></li>
-            </ol></li>
-            <li>Subfolder <code>external</code> containing:</li>
-            <li><ol>
-               <li>Subfolder for each linking task between your dataset and a foreign dataset, named after the linked datasets, and in it:</li>
-               <li><ol>
-                  <li>SILK-LSL script or export of the linking task from Silk Workbench</li>
-                  <li>The resulting linkset in N-Triples</li>
-                  <li>The VoID metadata file</li>
-               </ol></li>
-            </ol></li>
-         </ol>
-      </ol>
+         <h4>What</h4>
+            <ol>
+               <li>Use Silk to discover links among your datasets - internal linking</li>
+               <li>
+                  Use Silk to discover links between your datasets and foreign datasets already published on the Web - external linking.
+                  You can find those for instance in the <a href="https://lod-cloud.net/" target="_blank">LOD cloud</a>, in <a href="https://old.datahub.io/" target="_blank">old DataHubu</a>, in <a href="https://linked.opendata.cz/" target="_blank">linked.opendata.cz</a>, in <a href="https://wiki.dbpedia.org/" target="_blank">DBpedia</a>, in the <a href="https://data.gov.cz" target="_blank">National Open Data Catalog</a>, on the <a href="https://publications.europa.eu/en/web/eu-vocabularies/about" target="_blank">EU Vocabularies</a> web, etc.</li>
+               <li>
+                  The resulting links will be split into linksets, properly described by VoID metadata
+               </li>
+            </ol>
+         <h4>How</h4>
+            <ol>
+               <li>Folder <code>linking</code> containing:
+                  <ul>
+                     <li>Subfolder <code>internal</code> containing:
+                        <ul>
+                           <li>Subfolder for each linking task between your datasets, named after the linked datasets, and in it:
+                              <ol>
+                                 <li>SILK-LSL script or export of the linking task from Silk Workbench</li>
+                                 <li>The resulting linkset in N-Triples <code>linkset.nt</code></li>
+                                 <li>The VoID metadata file <code>void.ttl</code></li>
+                              </ol>
+                           </li>
+                        </ul>
+                     </li>
+                     <li>Subfolder <code>external</code> containing:
+                        <ul>
+                           <li>Subfolder for each linking task between your dataset and a foreign dataset, named after the linked datasets, and in it:
+                              <ol>
+                                 <li>SILK-LSL script or export of the linking task from Silk Workbench</li>
+                                 <li>The resulting linkset in N-Triples <code>linkset.nt</code></li>
+                                 <li>The VoID metadata file <code>void.ttl</code></li>
+                              </ol>
+                           </li>
+                        </ul>
+                     </li> 
+                  </ul>
+               </li>
+            </ol>
+         <h4>Silk tips</h4>
+            <ol>
+               <li>
+                  Watch the Activities tab and the console output of Silk - there may be useful error messages present
+               </li>
+            </ol>
       <h3>Part 4 - SPARQL querying</h3>
-      <h4>What</h4>
-      <ol>
-         <li>Load your datasets, linksets and metadata into a triplestore of your choice</li>
-         <li>Create non-trivial SPARQL queries demonstrating the added value of triplification and linking of your datasets</li>
-         <li>The queries should contain at least 2x <a href="https://www.w3.org/TR/sparql11-query/#select">SELECT</a>, 2x <a href="https://www.w3.org/TR/sparql11-query/#construct">CONSTRUCT</a>, 1x <a href="https://www.w3.org/TR/sparql11-query/#ask">ASK</a> and 1x <a href="https://www.w3.org/TR/sparql11-query/#describe">DESCRIBE</a>.</li>
-         <li>The queries should contain (together, not each separately) the following constructs: <a href="https://www.w3.org/TR/sparql11-query/#scopeFilters">FILTER</a>, <a href="https://www.w3.org/TR/sparql11-query/#optionals">OPTIONAL</a>, <a href="https://www.w3.org/TR/sparql11-query/#inline-data">VALUES</a>, <a href="https://www.w3.org/TR/sparql11-query/#bind">BIND</a>, <a href="https://www.w3.org/TR/sparql11-query/#func-if">IF</a>.</li>
-      </ol>
-      <h4>How</h4>
-      <ol>
-         <li>Subfolder <code>queries</code> containing individual SPARQL queries, as <code>*.sparql</code>, UTF-8 encoded text files</li>
-      </ol>
-      <h3>Part 5 - simple web application working with an RDF library and creating semantic annotations</h3>
-      <h4>What</h4>
-      <ol>
-         <li>Create a simple web application in Java, meaningfully using existing libraries for working with RDF (Apache Jena or Eclipse RDF4J)</li>
-         <li>The application should issue at least 3 non-trivial SPARQL queries (queries from Part 4 are recommended). At least one of the queries needs to be a SPARQL CONSTRUCT, and the resulting page must not be a simple triple list.</li>
-         <li>The web application does not need to use CSS, but it has to consist of a few interlinked web pages - typically, it is a list of entities and a page showing a detail of an entity and some statistics</li>
-         <li>TIP: A solution wich only sends an HTTP request in a correct format like this: <code>https://linked.opendata.cz/sparql/?default-graph-uri=&amp;query=select+*+where+%7B%3Fs+%3Fp+%3Fo%7D+LIMIT+100&amp;format=text%2Fhtml</code> and prints the result is insufficient. A reasonale usage of the RDF data model implemented by the libraries has to be shown.</li>
-         <li>Use RDFa, Microformats or Microdata to semantically represent the shown data in HTML</li>
-      </ol>
-      <h4>How</h4>
-      <ol>
-         <li>Folder <code>app</code> containing the source code of the project and the compiled WAR file</li>
-      </ol>
+         <h4>What</h4>
+            <ol>
+               <li>Load your datasets, linksets and metadata into a triplestore of your choice</li>
+               <li>Create non-trivial SPARQL queries demonstrating the added value of triplification and linking of your datasets, i.e. querying the data using the linksets</li>
+               <li>The queries should contain at least 2x <a href="https://www.w3.org/TR/sparql11-query/#select">SELECT</a>, 2x <a href="https://www.w3.org/TR/sparql11-query/#construct">CONSTRUCT</a>, 1x <a href="https://www.w3.org/TR/sparql11-query/#ask">ASK</a> and 1x <a href="https://www.w3.org/TR/sparql11-query/#describe">DESCRIBE</a>.</li>
+               <li>The queries should contain (together, not each separately) the following constructs: <a href="https://www.w3.org/TR/sparql11-query/#scopeFilters">FILTER</a>, <a href="https://www.w3.org/TR/sparql11-query/#optionals">OPTIONAL</a>, <a href="https://www.w3.org/TR/sparql11-query/#inline-data">VALUES</a>, <a href="https://www.w3.org/TR/sparql11-query/#bind">BIND</a>, <a href="https://www.w3.org/TR/sparql11-query/#func-if">IF</a>.</li>
+            </ol>
+         <h4>How</h4>
+            <ol>
+               <li>Subfolder <code>queries</code> containing individual SPARQL queries, as <code>*.sparql</code>, UTF-8 encoded text files</li>
+            </ol>
+      <h3>Part 5 - simple web application, semantic annotations, validation</h3>
+         <h4>What</h4>
+            <ol>
+               <li>Create a simple web application in Java, meaningfully using existing libraries for working with RDF (Apache Jena or Eclipse RDF4J)
+                  <ul>
+                     <li>The application should issue at least 3 non-trivial SPARQL queries (queries from Part 4 are recommended). At least one of the queries needs to be a SPARQL CONSTRUCT, and the resulting page must not be a simple triple list.</li>
+                     <li>The web application does not need to use CSS, but it has to consist of a few interlinked web pages - typically, it is a list of entities and a page showing a detail of an entity and some statistics</li>
+                     <li>TIP: A solution wich only sends an HTTP request in a correct format like this: <code>https://linked.opendata.cz/sparql/?default-graph-uri=&amp;query=select+*+where+%7B%3Fs+%3Fp+%3Fo%7D+LIMIT+100&amp;format=text%2Fhtml</code> and prints the result is insufficient. A reasonable usage of the RDF data model implemented by the libraries has to be shown.</li>
+                     <li>Use RDFa, Microformats or Microdata to semantically represent the shown data in HTML</li>      
+                  </ul>
+               </li>
+               <li>
+                  Write at least 10 SHACL shapes validating some of your datasets, including descriptions of what they do in comments.
+                  Each shape needs to have a message.
+                  The shapes must be working, i.e. when you break your dataset, the SHACL validator will report it.
+                  They need to include
+                  <ol>
+                     <li>a node shape and a property shape</li>
+                     <li>a node shape using a property shape</li>
+                     <li>value type constraint</li>
+                     <li>cardinality constraint</li>
+                     <li>value range constraint</li>
+                     <li>string-based constraint</li>
+                     <li>property pair constraint</li>
+                     <li>logical constraint</li>
+                     <li>shape-based constraint</li>
+                     <li>various shape severities</li>
+                  </ol>
+               </li>
+            </ol>
+         <h4>How</h4>
+            <ol>
+               <li>Folder <code>app</code> containing the source code of the project and the compiled WAR file</li>
+               <li>Folder <code>shacl</code> containing for each dataset for which you have SHACL shapes
+                  <ol>
+                     <li>
+                        <code>&lt;turtle-file-name&gt;.shacl</code> - named after the corresponding Turtle file in <code>triplification/output</code>
+                     </li>
+                  </ol>
+               </li>
+            </ol>
       <h3>Part 6 - presentation</h3>
-      <h4>What</h4>
-      <ol>
-         <li>Prepare a presentation of your semestral project</li>
-         <li>It should be 3 minutes long</li>
-         <li>Show the data sources used, which tools were used for triplification and wich new queries you are now able to answer thanks to the interlinking of the chosen datasets.</li>
-         <li>Show screenshots of your application</li>
-      </ol>
-      <h4>How</h4>
-      <ol>
-         <li>Folder <code>presentation</code> containing a simple, HTML page with the description, which will be used for the presentation</li>
-      </ol>    
+         <h4>What</h4>
+            <ol>
+               <li>Prepare a presentation of your semestral project</li>
+               <li>It should be 3-4 minutes long</li>
+               <li>Show the data sources used, which tools were used for triplification and wich new queries you are now able to answer thanks to the interlinking of the chosen datasets.</li>
+               <li>Show screenshots of your application</li>
+            </ol>
+         <h4>How</h4>
+            <ol>
+               <li>Folder <code>presentation</code> containing a simple, HTML page with the description, which will be used for the presentation</li>
+            </ol>    
   </div>
 <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
 <script>
