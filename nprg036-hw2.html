@@ -267,6 +267,20 @@
       <dd>
         In RDF, <code>xsd:double</code> is used rather than <code>xsd:float</code>. This is supported by the existing RDF Turtle and SPARQL syntax shortcuts for <code>xsd:double</code>.
       </dd>
+      <dt>
+        Insufficiently defined IRI patterns
+      </dt>
+      <dd>
+        Typical IRI patterns for instances (data) contain hint of a type (based on class name) and an identifier, e.g. `https://data.mff.cuni.cz/people/John-Doe`, `https://data.mff.cuni.cz/rooms/S4`, etc.
+        It is necessary to first establish those patterns and then stick to them.
+        Will it be `/people`, `/person`, `/Person`, `John-Doe`, `john-doe`, `johnDoe` &hellip;?
+      </dd>
+      <dt>
+        Telephone numbers and e-mails as literals
+      </dt>
+      <dd>
+        In RDF, telephone numbers and e-mails have their own IRI schemes `tel:+420123456789` and `mailto:a@b.cz` - therefore, they are resources (`rdfs:Resource`), not literals.
+      </dd>
       <dt>Not using LPG relation properties</dt>
       <dd>
         One of the major differences of LPG from RDF are relation properties. The assignment asks for their usage in LPG and Cypher. If you do not have any part of the conceptual model suitable to be represented as relation properties, you can add something.
