@@ -96,9 +96,24 @@
             "Customer" lives in a country - is a relationship.
           </li>
           <li>
-            Using <code>1..*</code> multiplicities means that the source entity cannot exists in your data without at least one relationship to the other entity.
-            For instance, having a food producer connected to their items sold in an eshop this way means, that when their last item from the eshop is removed, data about the producer needs to be removed as well.
+            Using <code>1..*</code> multiplicities means that the source entity cannot exist in your data without at least one relationship to the other entity.
+            For instance, having a food producer connected to their items sold in an e-shop this way means, that when their last item from the e-shop is removed, data about the producer needs to be removed as well.
             I.e. there cannot be data about any producers, which (even temporarily) do not have any items... might be problematic.
+          </li>
+          <li>
+            Diagram description should not be a free-text story about what I can see in the diagram. The diagram description needs to
+            <ol>
+              <li>briefly introduce the domain using a paragraph of text, so that I know what it will be about, and then</li>
+              <li>be structured, so that when I am interested in a certain class/attribute/relationship, I can easily find it in the description. See <a href="https://ofn.gov.cz/úřední-desky/2021-07-20/">this data specification</a>.</li>
+            </ol>
+          </li>
+          <li>
+            Usage of different relationship type/shape than discussed in the tutorial. We use only 
+            <ol>
+              <li>association, i.e. simple line with no shape at the ends, with multiplicity specified at each end, and a name of the association, and</li>
+              <li>generalization, i.e. a line with an empty triangle pointing at the more general class, with no name and no multiplicity</li>
+            </ol>
+            Other shapes will not be accepted.
           </li>
         </ol>
       </dd>
