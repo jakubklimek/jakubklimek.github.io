@@ -112,3 +112,9 @@ function hljsDefineTurtle(hljs) {
     }
   };
 }
+
+module.exports = function(hljs) {
+    hljs.registerLanguage('turtle', hljsDefineTurtle);
+};
+
+module.exports.definer = hljsDefineTurtle;
