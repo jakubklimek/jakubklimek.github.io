@@ -57,6 +57,7 @@
           <li>
             For representation of data in RDF, you will need to cover the conceptual model with classes and properties either from <a href="https://lov.linkeddata.es/dataset/lov/">existing vocabularies</a>, or by defining new ones using <a href="https://docs.google.com/presentation/d/1SwDgvaTJvUBY_5_EOG3V_ajJsIZadzFNNnJgYqa1Qcw/edit#slide=id.gba51ba2639_1_671">RDF Schema</a>.
             For the newly defined classes and properties use the <code>@prefix ex: &lt;http://example.org/vocabulary/&gt; .</code> prefix and attach a human readable label to each one of them. For new properties specify domain and range.
+            For generic properties (names, descriptions) that you use on multiple classes, domain is not necessary, or can be specified as <code>rdfs:Resource</code> or <code>owl:Thing</code>, which allows you to use the property on multiple classes without causing problems.
           </li>
           <li>
             Example of a conceptual model: <br/><img class="img-fluid" src="./assets/images/nprg036-hw2-model.svg"/>
