@@ -259,12 +259,12 @@
       <h3>Part 5 - simple web application, semantic annotations, validation</h3>
          <h4>What</h4>
             <ol>
-               <li>Create a simple web application in Java, meaningfully using existing libraries for working with RDF (Apache Jena or Eclipse RDF4J)
+               <li>Create a simple web application, meaningfully using existing libraries for working with RDF. (Java + Apache Jena/Eclipse rdf4j preferred, Python + <a href="https://rdflib.readthedocs.io/en/stable/">rdflib</a> or JavaScript + <a href="https://rdf.js.org/">rdfjs</a> possible)
                   <ul>
                      <li>The application should issue at least 3 non-trivial SPARQL queries (queries from Part 4 are recommended). At least one of the queries needs to be a SPARQL CONSTRUCT, and the resulting page must not be a simple triple list.</li>
                      <li>The web application does not need to use CSS, but it has to consist of a few interlinked web pages - typically, it is a list of entities and a page showing a detail of an entity and some statistics</li>
                      <li>TIP: A solution wich only sends an HTTP request in a correct format like this: <code>https://linked.opendata.cz/sparql/?default-graph-uri=&amp;query=select+*+where+%7B%3Fs+%3Fp+%3Fo%7D+LIMIT+100&amp;format=text%2Fhtml</code> and prints the result is insufficient. A reasonable usage of the RDF data model implemented by the libraries has to be shown.</li>
-                     <li>Use RDFa, Microformats or Microdata to semantically represent the shown data in HTML</li>      
+                     <li>Use RDFa, Microformats or Microdata to semantically represent the shown data in HTML</li>
                   </ul>
                </li>
                <li>
