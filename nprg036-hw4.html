@@ -60,12 +60,13 @@
             Create a corresponding CSV on the Web Table group descriptor, including proper data types, languages, and primary and foreign keys.
           </li>
           <li>
-            Represent the data in CSV files valid against the created CSV on the Web descriptor.
+            Represent the data (not the vocabulary) in CSV files valid against the created CSV on the Web descriptor.
           </li>
           <li>
             Enhance the CSV on the Web descriptor with virtual columns, and <code>aboutUrl</code>, <code>propertyUrl</code> and <code>valueUrl</code> annotations.
-            The resulting RDF data representation should be identical to the ones from Homeworks 2 and 3.
             Use the <a href="https://github.com/ruby-rdf/rdf-tabular">rdf-tabular</a> ruby gem to transform the CSV table group to RDF Turtle.
+            The resulting RDF data representation should be identical to the ones from Homeworks 2 and 3.
+            Use <a href="https://jena.apache.org/documentation/tools/">rdfdiff</a> (or similar) to verify.
           </li>
         </ol>
       </dd>
@@ -146,6 +147,13 @@
     </dl>
     <h2>Common errors</h2>
     <dl>
+      <dt>
+        Using <code>--decode-uri</code> of <code>rdf-tabular</code> for encoding normal ASCII characters like <code>%</code>, <code>/</code>, etc.
+      </dt>
+      <dd>
+        This function is to be used only for encoding percent-encoded UTF-8 characters, not for normal ASCII characters.
+        For normal ASCII characters, the <code>{+variable}</code> URI template should be used instead.
+      </dd>
       <dt>
         Mixing prefixed and relative IRIs in CSVW descriptor
       </dt>

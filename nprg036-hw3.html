@@ -69,7 +69,7 @@
             For each hierarchical model create a corresponding XML Schema, enforcing proper datatypes.
           </li>
           <li>
-            Represent the data in XML files valid against the created XML Schemas.
+            Represent the data (not the vocabulary)in XML files valid against the created XML Schemas.
             Utilize the <code>xml:lang</code> attribute to denote the natural language of text values (<a href="https://stackoverflow.com/questions/7502382/how-to-allow-xmllang-attribute-in-xmlschema">HINT</a>)
           </li>
           <li>
@@ -82,17 +82,19 @@
             Create XSLT transformations producing RDF Turtle representation of your data.
             This is called a &quot;lifting transformation&quot; - lifting the data to a semantically more precise representation.
             The resulting RDF data representation should be identical to the one from Homework 2.
+            Use <a href="https://jena.apache.org/documentation/tools/">rdfdiff</a> (or similar) to verify.
             Validate the resulting file.
           </li>
           <li>
             For each hierarchical model create a corresponding JSON Schema, enforcing proper datatypes.
           </li>
           <li>
-            Represent the data in JSON files valid against the created JSON Schemas.
+            Represent the data (not the vocabulary) in JSON files valid against the created JSON Schemas.
           </li>
           <li>
             Create a JSON-LD context mapping the JSON representations to RDF.
             The resulting RDF data representation should be identical to the one from Homework 2.
+            Use <a href="https://jena.apache.org/documentation/tools/">rdfdiff</a> (or similar) to verify.
             This might require changing or amending the JSON representation and the JSON Schemas.
             Use the <a href="https://json-ld.org/playground/">JSON-LD playground</a> to view the RDF N-Quads representation.
             Use the <a href="https://jena.apache.org/documentation/io/">Apache Jena</a> <code>riot</code> command-line tool transform the result into RDF Turtle.
